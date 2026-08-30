@@ -1,70 +1,118 @@
 {
   "zh": {
     "ai-cli": [
-      "Claude Code Beta v0.9.2 新增功能上线",
-      "OpenAI Codex v1.0 后停止支持",
-      "Gemini CLI Alpha v0.3.1 正在积极开发",
-      "GitHub Copilot CLI 出现112个开放问题",
-      "Qwen Code 在开源社区获得关注",
-      "Pi CLI 工具早期采用势头强劲"
+      "AI CLI从演示转向关键任务基础设施。",
+      "OpenAI Codex发布2个Rust alpha版本。",
+      "Gemini CLI发布夜间版本。",
+      "Copilot CLI发布补丁版本；所有CLI活跃。",
+      "社区主题：上下文成本、撤销、状态报告。",
+      "多智能体编排与插件成为差异化。"
     ],
     "ai-agents": [
-      "OpenClaw v0.9.1 稳定版，含487个问题",
-      "Hermes Agent beta v0.8.4 发布",
-      "IronClaw 预发布版 v0.7.2 上线",
-      "QwenPaw 问题达512个，热门代理",
-      "ZeroClaw Labs 推出新隐私代理",
-      "OpenClaw 健康评分8.2（高）"
+      "OpenClaw 24小时内更新500个issue和500个PR。",
+      "OpenClaw无新版本；两个发布准备PR活跃。",
+      "主要问题：会话损坏、消息丢失、内存泄漏。",
+      "今日146个OpenClaw PR合并或关闭。",
+      "Control UI为安装策略警告增加管理员审核。",
+      "修复避免侧边栏会话目录刷新风暴。"
     ],
     "ai-infra": [
-      "SGLang 修复推测解码死锁",
-      "Blackwell SM100 NVFP4 内核进入开发",
-      "ROCm gfx1250 实验性支持加入",
-      "SGLang 扩展扩散模型支持",
-      "vLLM 稳定性改进持续进行",
-      "LiteLLM 增强多供应商路由"
+      "llama.cpp 24小时发布10个版本（b10681–b10690）。",
+      "GLM-5.3-Flash和DeepSeek-V4-Flash推动推理启动。",
+      "正确性而非吞吐量主导活跃线程。",
+      "llama.cpp调优Metal、Vulkan、OpenCL、SYCL后端。",
+      "智能体工作负载暴露内存与取消缺陷。",
+      "LiteLLM通过签名镜像强化安全；PII争议。"
+    ],
+    "ai-trending": [
+      "Agent Skills和编码插件主导GitHub趋势。",
+      "workweave/router承诺降低40–70% LLM成本。",
+      "Osmantic/ODS将PC变为本地AI服务器。",
+      "OpenMAIC提供一键多智能体教室。",
+      "OpenMontage：首个开源智能体视频制作。",
+      "Heretic自动移除审查；无向量RAG兴起。"
     ],
     "ai-web": [
-      "Anthropic 发布模型硬件标准",
-      "MHS 实现 AI 控制实验设备",
-      "HHMI Janelia 合作宣布",
-      "AI 代理可自动化复杂流程",
-      "MHS 将设置时间从数周缩短至分钟",
-      "聚焦科学领域的可执行 AI 代理"
+      "Anthropic预览模型硬件标准（MHS）。",
+      "MHS让AI智能体安全协调实验室仪器。",
+      "Anthropic与HHMI Janelia合作推进科学自动化。",
+      "MHS将设置时间从数周缩短至数分钟。",
+      "涵盖显微镜、液体处理机和机械臂。",
+      "Anthropic瞄准可执行的实时AI智能体。"
+    ],
+    "ai-hn": [
+      "Apple M6/M5 Ultra讨论主导HN AI首页。",
+      "OpenAI的Cursor决定和OpenExecutive讽刺引发讨论。",
+      "GLM-5.3-Flash以1,128分和575评论登顶HN。",
+      "Debian的AI投票和Anthropic裁决聚焦治理。",
+      "Gemini-3.5-Transcribe是专用转录模型。",
+      "Terminal-Bench-Science在科研工作流上测试智能体。"
+    ],
+    "ai-community": [
+      "实测：最佳模型组合也最不可信。",
+      "MCP服务器的只读声明不可信。",
+      "40行Go缓存据称削减71%的LLM费用。",
+      "GPT-5.6 Sol快速模式：双倍价格换来速度？",
+      "SpaceX-Cursor交易和OpenAI退出加剧锁定担忧。",
+      "Lobste.rs：仅漏洞传言即可产生真实利用。"
     ]
   },
   "en": {
     "ai-cli": [
-      "Claude Code Beta v0.9.2 launched with new skills",
-      "OpenAI Codex deprecated after v1.0 release",
-      "Gemini CLI Alpha v0.3.1 now in active development",
-      "GitHub Copilot CLI hits 112 open issues",
-      "Qwen Code gains traction in open-source community",
-      "Pi CLI tool shows strong early adoption"
+      "AI CLI shifts from demo to mission-critical infra.",
+      "OpenAI Codex ships 2 Rust alpha releases.",
+      "Gemini CLI ships a nightly release.",
+      "Copilot CLI ships patch release; all CLIs active.",
+      "Community themes: context cost, undo, status reporting.",
+      "Multi-agent orchestration and plugins now differentiate."
     ],
     "ai-agents": [
-      "OpenClaw v0.9.1 stable with 487 issues",
-      "Hermes Agent beta v0.8.4 released",
-      "IronClaw pre-release v0.7.2 now live",
-      "QwenPaw hits 512 issues, top trending agent",
-      "ZeroClaw Labs launches new privacy-focused agent",
-      "OpenClaw health score at 8.2 (high)"
+      "OpenClaw sees 500 issues and 500 PRs updated in 24h.",
+      "No new OpenClaw release; two release-prep PRs active.",
+      "Top issues: session corruption, message loss, memory leaks.",
+      "146 OpenClaw PRs merged or closed today.",
+      "Control UI adds admin review for install-policy warnings.",
+      "Fix avoids session-catalog refresh storms in sidebar."
     ],
     "ai-infra": [
-      "SGLang fixes speculative decoding deadlock",
-      "Blackwell SM100 NVFP4 kernels now in dev",
-      "ROCm gfx1250 support added experimentally",
-      "SGLang expands diffusion model support",
-      "vLLM stability improvements ongoing",
-      "LiteLLM enhances multi-provider routing"
+      "llama.cpp ships 10 releases in 24h (b10681–b10690).",
+      "GLM-5.3-Flash and DeepSeek-V4-Flash drive inference bring-up.",
+      "Correctness, not throughput, dominates active threads.",
+      "llama.cpp tunes Metal, Vulkan, OpenCL, SYCL backends.",
+      "Agentic workloads expose memory and cancellation bugs.",
+      "LiteLLM hardens security with signed images, PII debate."
+    ],
+    "ai-trending": [
+      "Agent Skills and coding plugins dominate GitHub trending.",
+      "workweave/router promises 40–70% LLM cost reduction.",
+      "Osmantic/ODS turns a PC into a local AI server.",
+      "OpenMAIC offers one-click multi-agent classrooms.",
+      "OpenMontage: first open-source agentic video production.",
+      "Heretic automates censorship removal; vectorless RAG rises."
     ],
     "ai-web": [
-      "Anthropic launches Model Hardware Standard",
-      "MHS enables AI control of lab instruments",
-      "HHMI Janelia collaboration announced",
-      "AI agents now automate complex workflows",
-      "MHS cuts setup time from weeks to minutes",
-      "Focus on executable AI agents for science"
+      "Anthropic previews Model Hardware Standard (MHS).",
+      "MHS lets AI agents coordinate lab instruments safely.",
+      "Anthropic partners with HHMI Janelia on science automation.",
+      "MHS cuts setup time from weeks to minutes.",
+      "Covers microscopes, liquid handlers, and robotic arms.",
+      "Anthropic targets executable real-time AI agents."
+    ],
+    "ai-hn": [
+      "Apple M6/M5 Ultra thread dominates HN AI front page.",
+      "OpenAI's Cursor decision and OpenExecutive satire debated.",
+      "GLM-5.3-Flash tops HN with 1,128 points and 575 comments.",
+      "Debian's AI vote and Anthropic ruling spotlight governance.",
+      "Gemini-3.5-Transcribe is a dedicated transcription model.",
+      "Terminal-Bench-Science tests agents on research workflows."
+    ],
+    "ai-community": [
+      "Field test: best model pair was also least trustworthy.",
+      "MCP servers' read-only claims can't be trusted.",
+      "40-line Go cache reportedly cuts LLM bill by 71%.",
+      "GPT-5.6 Sol fast mode: does double price buy speed?",
+      "SpaceX-Cursor deal and OpenAI pullout fuel lock-in concerns.",
+      "Lobste.rs: bug rumor alone can yield a real exploit."
     ]
   }
 }
