@@ -47,12 +47,33 @@ export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: L
         ? "(No search results)"
         : "（无搜索结果）";
 
+
+  const configSection =
+    data.configRepos.length > 0
+      ? data.configRepos
+          .map(
+            (r, index) =>
+              `${index + 1}. [${r.fullName}](${r.url})` +
+              (r.language ? ` [${r.language}]` : "") +
+              ` ⭐${r.stargazersCount.toLocaleString()}` +
+              (r.forksCount > 0 ? ` 🍴${r.forksCount.toLocaleString()}` : "") +
+              ` [query:${r.searchQuery}]` +
+              ` pushed:${r.pushedAt.slice(0, 10)}` +
+              (r.description ? `
+   ${r.description}` : ""),
+          )
+          .join("
+")
+      : lang === "en"
+        ? "(No configurable AI repository candidates found)"
+        : "（未找到可配置 AI 仓库候选）";
   if (lang === "en") {
     return `You are a technical analyst focused on the AI open-source ecosystem. The following is ${dateStr} GitHub AI-related trending repository data. Please filter for AI relevance, categorize, and analyze trends.
 
 ## Data Sources
 - **Trending List** (github.com/trending, today's stars most reliable): Real-time hot list with today's new stars
 - **Topic Search** (GitHub Search API, topic tags): AI-related projects active in last 7 days, grouped by topic
+- **Config Candidates** (GitHub Search API, inspired by sindresorhus/awesome AI and developer-tool categories): top-starred AI repositories that may be useful to configure locally
 
 ---
 
@@ -63,6 +84,11 @@ ${trendingSection}
 
 ## AI Topic Search Results (${data.searchRepos.length} repositories, deduplicated)
 ${searchSection}
+
+---
+
+## Top Configurable AI Repositories by Stars (${data.configRepos.length} repositories)
+${configSection}
 
 ---
 
@@ -92,12 +118,23 @@ Generate a structured AI Open Source Trends Report in English:
    - **Summary**: 2 sentences — what the project is and why it's worth attention today, including any standout data point or momentum signal
    - List 3-8 projects per category; omit a category's table entirely if no project falls under it
 
-3. **Trend Signal Analysis** — 200-300 words, distill from today's hot list:
+3. **Top 10 Worth Configuring** — From "Top Configurable AI Repositories by Stars", render exactly one **Markdown table** with 10 rows when data is available:
+
+   | Rank | Repository | Stars | What it does | Worth configuring? |
+   | ---: | :--- | ---: | :--- | :--- |
+
+   - **Repository**: repository name as a Markdown link to its GitHub URL
+   - **Stars**: copy the total star count from the input verbatim
+   - **What it does**: 1 concise sentence describing the feature or capability
+   - **Worth configuring?**: start with one of "Yes", "Maybe", or "No", then give 1 concise reason tailored to a local AI/Codex/Claude Code/DeepSeek/agent workflow
+   - Prefer practical local tools, MCP servers, agent frameworks, templates, SDKs, RAG/knowledge tools, and AI coding utilities. If a repo is only a library/model with no practical local configuration value, mark it "Maybe" or "No".
+
+4. **Trend Signal Analysis** — 200-300 words, distill from today's hot list:
    - Which type of AI tool is getting explosive community attention?
    - Any new tech stacks or directions appearing for the first time?
    - Connection to recent LLM releases / industry events
 
-4. **Community Hot Spots** — Bullet list of 3-5 specific projects or directions worth developer focus, with brief reasoning
+5. **Community Hot Spots** — Bullet list of 3-5 specific projects or directions worth developer focus, with brief reasoning
 
 Style: English, professional and concise, must include GitHub links for every project.
 `;
@@ -108,6 +145,7 @@ Style: English, professional and concise, must include GitHub links for every pr
 ## 数据说明
 - **Trending 榜单**（github.com/trending，今日 stars 数最可信）：今日实时热榜，含今日新增 stars
 - **主题搜索**（GitHub Search API，topic 标签）：7天内活跃的 AI 相关项目，按主题分类
+- **配置候选**（GitHub Search API，参考 sindresorhus/awesome 的 AI 与开发工具分类思路）：按 star 排序筛选可能适合本地配置的 AI 仓库
 
 ---
 
@@ -118,6 +156,11 @@ ${trendingSection}
 
 ## AI 主题搜索结果（共 ${data.searchRepos.length} 个仓库，已去重）
 ${searchSection}
+
+---
+
+## 按 Star 排序的可配置 AI 仓库 Top 10（共 ${data.configRepos.length} 个候选）
+${configSection}
 
 ---
 
@@ -147,12 +190,23 @@ ${searchSection}
    - **简要说明**：2 句话——项目是什么、今天为什么值得关注，点出关键数据或增长信号
    - 每个维度列 3~8 个项目；某维度下若无项目则整张表省略
 
-3. **趋势信号分析** — 200~300 字，从今日热榜中提炼：
+3. **值得配置的 GitHub AI 仓库 Top 10** — 从“按 Star 排序的可配置 AI 仓库 Top 10”中输出一张 **Markdown 表格**；有 10 个候选时必须列满 10 行：
+
+   | 排名 | 仓库 | Stars | 功能简介 | 是否值得配置 |
+   | ---: | :--- | ---: | :--- | :--- |
+
+   - **仓库**：仓库名，做成指向 GitHub 的 Markdown 链接
+   - **Stars**：照抄输入中的总 star 数，不要重算
+   - **功能简介**：1 句说明它能做什么
+   - **是否值得配置**：必须以“值得 / 可观望 / 不建议”开头，再用 1 句话说明原因；判断要贴合本地 AI 工作流，例如 Codex、Claude Code、DeepSeek、Pi Agent、MCP、RAG、知识库、浏览器插件、自动化脚本等
+   - 优先推荐实际可本地配置的工具、MCP 服务、Agent 框架、模板、SDK、RAG/知识库工具和 AI 编程工具；如果只是普通模型库或泛框架，给“可观望”或“不建议”。
+
+4. **趋势信号分析** — 200~300 字，从今日热榜中提炼：
    - 哪类 AI 工具正在获得社区爆发性关注？
    - 有无新兴技术栈或方向首次登榜？
    - 与近期大模型发布/行业事件的关联
 
-4. **社区关注热点** — 以 bullet 形式列出 3~5 个值得开发者重点关注的具体项目或方向，给出简短理由
+5. **社区关注热点** — 以 bullet 形式列出 3~5 个值得开发者重点关注的具体项目或方向，给出简短理由
 
 语言要求：中文，专业简洁，每个项目必须附 GitHub 链接。
 `;
