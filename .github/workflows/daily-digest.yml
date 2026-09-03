@@ -86,6 +86,9 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           PRODUCTHUNT_TOKEN: ${{ secrets.PRODUCTHUNT_TOKEN }}
           DIGEST_REPO: ${{ github.repository }}
+          LLM_REQUEST_TIMEOUT_MS: 45000
+          LLM_MAX_RETRIES: 0
+        timeout-minutes: 25
         run: pnpm start
 
       - name: Commit digest files
