@@ -85,7 +85,7 @@ ${searchSection}
 
 ---
 
-## Top Configurable AI Repositories by Stars (${data.configRepos.length} repositories)
+## Top AI Repository Candidates to Ask Codex About (${data.configRepos.length} repositories)
 ${configSection}
 
 ---
@@ -116,15 +116,15 @@ Generate a structured AI Open Source Trends Report in English:
    - **Summary**: 2 sentences — what the project is and why it's worth attention today, including any standout data point or momentum signal
    - List 3-8 projects per category; omit a category's table entirely if no project falls under it
 
-3. **Top 10 Worth Configuring** — From "Top Configurable AI Repositories by Stars", render exactly one **Markdown table** with 10 rows when data is available:
+3. **Top 10 AI Repositories to Ask Codex About** — From "Top AI Repository Candidates to Ask Codex About", render exactly one **Markdown table** with 10 rows when data is available. Treat them as candidates for the user to ask Codex about later and decide manually; do not imply automatic installation or configuration:
 
-   | Rank | Repository | Stars | What it does | Worth configuring? |
+   | Rank | Repository | Stars | What it does | Codex decision note |
    | ---: | :--- | ---: | :--- | :--- |
 
    - **Repository**: repository name as a Markdown link to its GitHub URL
    - **Stars**: copy the total star count from the input verbatim
    - **What it does**: 1 concise sentence describing the feature or capability
-   - **Worth configuring?**: start with one of "Yes", "Maybe", or "No", then give 1 concise reason tailored to a local AI/Codex/Claude Code/DeepSeek/agent workflow
+   - **Codex decision note**: start with one of "Worth asking Codex", "Maybe", or "Skip", then give 1 concise reason tailored to a local AI/Codex/Claude Code/DeepSeek/agent workflow and what the user should ask Codex to evaluate next
    - Prefer practical local tools, MCP servers, agent frameworks, templates, SDKs, RAG/knowledge tools, and AI coding utilities. If a repo is only a library/model with no practical local configuration value, mark it "Maybe" or "No".
 
 4. **Trend Signal Analysis** — 200-300 words, distill from today's hot list:
@@ -157,7 +157,7 @@ ${searchSection}
 
 ---
 
-## 按 Star 排序的可配置 AI 仓库 Top 10（共 ${data.configRepos.length} 个候选）
+## 供 Codex 追问决策的 AI 仓库候选 Top 10（共 ${data.configRepos.length} 个候选）
 ${configSection}
 
 ---
@@ -188,15 +188,15 @@ ${configSection}
    - **简要说明**：2 句话——项目是什么、今天为什么值得关注，点出关键数据或增长信号
    - 每个维度列 3~8 个项目；某维度下若无项目则整张表省略
 
-3. **值得配置的 GitHub AI 仓库 Top 10** — 从“按 Star 排序的可配置 AI 仓库 Top 10”中输出一张 **Markdown 表格**；有 10 个候选时必须列满 10 行：
+3. **值得在 Codex 里追问的 GitHub AI 仓库 Top 10** — 从“供 Codex 追问决策的 AI 仓库候选 Top 10”中输出一张 **Markdown 表格**；有 10 个候选时必须列满 10 行。它们只是给用户后续在 Codex 里继续询问、评估和决定是否配置的候选，不要写成自动安装或自动配置：
 
-   | 排名 | 仓库 | Stars | 功能简介 | 是否值得配置 |
+   | 排名 | 仓库 | Stars | 功能简介 | Codex 决策建议 |
    | ---: | :--- | ---: | :--- | :--- |
 
    - **仓库**：仓库名，做成指向 GitHub 的 Markdown 链接
    - **Stars**：照抄输入中的总 star 数，不要重算
    - **功能简介**：1 句说明它能做什么
-   - **是否值得配置**：必须以“值得 / 可观望 / 不建议”开头，再用 1 句话说明原因；判断要贴合本地 AI 工作流，例如 Codex、Claude Code、DeepSeek、Pi Agent、MCP、RAG、知识库、浏览器插件、自动化脚本等
+   - **Codex 决策建议**：必须以“值得问 Codex / 可观望 / 先跳过”开头，再用 1 句话说明原因，并点明用户下一步可让 Codex 评估什么；判断要贴合本地 AI 工作流，例如 Codex、Claude Code、DeepSeek、Pi Agent、MCP、RAG、知识库、浏览器插件、自动化脚本等
    - 优先推荐实际可本地配置的工具、MCP 服务、Agent 框架、模板、SDK、RAG/知识库工具和 AI 编程工具；如果只是普通模型库或泛框架，给“可观望”或“不建议”。
 
 4. **趋势信号分析** — 200~300 字，从今日热榜中提炼：
@@ -926,3 +926,4 @@ ${lobstersText}
 语言要求：中文，简洁专业，保留所有原文链接。
 `;
 }
+
