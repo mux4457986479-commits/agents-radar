@@ -7,7 +7,7 @@
 import OpenAI from "openai";
 import type { LlmProvider } from "./types.ts";
 
-const DEFAULT_LLM_REQUEST_TIMEOUT_MS = 180_000;
+const DEFAULT_LLM_REQUEST_TIMEOUT_MS = 60_000;
 
 export abstract class OpenAICompatibleProvider implements LlmProvider {
   abstract readonly name: string;

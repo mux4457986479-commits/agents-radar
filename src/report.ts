@@ -53,7 +53,7 @@ function releaseSlot(): void {
 // LLM
 // ---------------------------------------------------------------------------
 
-const MAX_RETRIES = 3;
+const MAX_RETRIES = Number(process.env["LLM_MAX_RETRIES"] ?? 1);
 const RETRY_BASE_MS = 5_000; // 5 s, 10 s, 20 s
 
 export function is429(err: unknown): boolean {
