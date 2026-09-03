@@ -297,6 +297,7 @@ describe("buildTrendingPrompt", () => {
         },
       ],
       searchRepos: [],
+      configRepos: [],
       trendingFetchSuccess: true,
     };
     const result = buildTrendingPrompt(data, "2026-03-09");
@@ -307,7 +308,7 @@ describe("buildTrendingPrompt", () => {
   });
 
   it("shows fetch failure message when trending fails", () => {
-    const data: TrendingData = { trendingRepos: [], searchRepos: [], trendingFetchSuccess: false };
+    const data: TrendingData = { trendingRepos: [], searchRepos: [], configRepos: [], trendingFetchSuccess: false };
     const result = buildTrendingPrompt(data, "2026-03-09");
     expect(result).toContain("未能抓取");
   });
@@ -326,11 +327,36 @@ describe("buildTrendingPrompt", () => {
           searchQuery: "ai-agent",
         },
       ],
+      configRepos: [],
       trendingFetchSuccess: false,
     };
     const result = buildTrendingPrompt(data, "2026-03-09");
     expect(result).toContain("[topic:ai-agent]");
     expect(result).toContain("1,000");
+  });
+
+  it("includes AI config repos", () => {
+    const data: TrendingData = {
+      trendingRepos: [],
+      searchRepos: [],
+      configRepos: [
+        {
+          fullName: "model/context-protocol",
+          description: "MCP servers and integrations",
+          language: "TypeScript",
+          stargazersCount: 12000,
+          forksCount: 800,
+          pushedAt: "2026-03-08",
+          url: "https://github.com/model/context-protocol",
+          searchQuery: "mcp",
+        },
+      ],
+      trendingFetchSuccess: true,
+    };
+    const result = buildTrendingPrompt(data, "2026-03-09");
+    expect(result).toContain("按 Star 排序的可配置 AI 仓库 Top 10");
+    expect(result).toContain("model/context-protocol");
+    expect(result).toContain("12,000");
   });
 });
 
@@ -425,3 +451,5 @@ describe("buildHnPrompt", () => {
     expect(result).toContain("Hacker News");
   });
 });
+
+
