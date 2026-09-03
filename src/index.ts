@@ -185,6 +185,7 @@ async function fetchAllData(
       (): TrendingData => ({
         trendingRepos: [],
         searchRepos: [],
+        configRepos: [],
         trendingFetchSuccess: false,
       }),
     ),

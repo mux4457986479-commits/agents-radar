@@ -7,6 +7,8 @@
 import OpenAI from "openai";
 import type { LlmProvider } from "./types.ts";
 
+const DEFAULT_LLM_REQUEST_TIMEOUT_MS = 180_000;
+
 export abstract class OpenAICompatibleProvider implements LlmProvider {
   abstract readonly name: string;
   protected readonly client: OpenAI;
@@ -21,11 +23,15 @@ export abstract class OpenAICompatibleProvider implements LlmProvider {
   }
 
   async call(prompt: string, maxTokens: number): Promise<string> {
-    const response = await this.client.chat.completions.create({
-      model: this.model,
-      max_completion_tokens: maxTokens,
-      messages: [{ role: "user", content: prompt }],
-    });
+    const timeout = Number(process.env["LLM_REQUEST_TIMEOUT_MS"] ?? DEFAULT_LLM_REQUEST_TIMEOUT_MS);
+    const response = await this.client.chat.completions.create(
+      {
+        model: this.model,
+        max_completion_tokens: maxTokens,
+        messages: [{ role: "user", content: prompt }],
+      },
+      { timeout },
+    );
     const text = response.choices[0]?.message?.content;
     if (!text) throw new Error(`Unexpected empty response from ${this.name}`);
     return text;
