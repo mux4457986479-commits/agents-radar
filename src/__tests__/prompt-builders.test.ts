@@ -354,7 +354,7 @@ describe("buildTrendingPrompt", () => {
       trendingFetchSuccess: true,
     };
     const result = buildTrendingPrompt(data, "2026-03-09");
-    expect(result).toContain("按 Star 排序的可配置 AI 仓库 Top 10");
+    expect(result).toContain("供 Codex 追问决策的 AI 仓库候选 Top 10");
     expect(result).toContain("model/context-protocol");
     expect(result).toContain("12,000");
   });
@@ -451,5 +451,6 @@ describe("buildHnPrompt", () => {
     expect(result).toContain("Hacker News");
   });
 });
+
 
 
