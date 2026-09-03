@@ -59,11 +59,9 @@ export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: L
               (r.forksCount > 0 ? ` 🍴${r.forksCount.toLocaleString()}` : "") +
               ` [query:${r.searchQuery}]` +
               ` pushed:${r.pushedAt.slice(0, 10)}` +
-              (r.description ? `
-   ${r.description}` : ""),
+              (r.description ? `\n   ${r.description}` : ""),
           )
-          .join("
-")
+          .join("\n")
       : lang === "en"
         ? "(No configurable AI repository candidates found)"
         : "（未找到可配置 AI 仓库候选）";
