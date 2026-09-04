@@ -30,7 +30,7 @@ export abstract class OpenAICompatibleProvider implements LlmProvider {
         max_completion_tokens: maxTokens,
         messages: [{ role: "user", content: prompt }],
       },
-      { timeout },
+      { timeout, maxRetries: 0 },
     );
     const text = response.choices[0]?.message?.content;
     if (!text) throw new Error(`Unexpected empty response from ${this.name}`);

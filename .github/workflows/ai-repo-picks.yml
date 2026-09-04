@@ -1,0 +1,65 @@
+name: AI Repository Top 10
+
+on:
+  schedule:
+    - cron: "17 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ai-repo-picks
+  cancel-in-progress: false
+
+jobs:
+  picks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Generate verified daily AI picks
+        timeout-minutes: 12
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LLM_PROVIDER: ${{ secrets.LLM_PROVIDER }}
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          LLM_REQUEST_TIMEOUT_MS: 45000
+          LLM_MAX_RETRIES: 0
+        run: pnpm exec tsx src/ai-repo-picks.ts
+      - name: Preserve generated report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-repo-picks
+          path: digests/ai-repo-picks-latest.*
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add digests/
+          if ! git diff --cached --quiet; then
+            git commit -m "digest: daily AI repository picks"
+            git pull --rebase origin master
+            git push origin HEAD:master
+          fi
+      - name: Publish or update daily issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          DATE=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("digests/ai-repo-picks-latest.json", "utf8")).date)')
+          TITLE="AI Repository Top 10 / 值得配置吗？ $DATE"
+          NUMBER=$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --search "$TITLE in:title" --json number,title --jq ".[] | select(.title == \"$TITLE\") | .number" | head -1)
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file digests/ai-repo-picks-latest.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body-file digests/ai-repo-picks-latest.md
+          fi

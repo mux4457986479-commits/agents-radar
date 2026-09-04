@@ -47,13 +47,13 @@ export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: L
         ? "(No search results)"
         : "（无搜索结果）";
 
-
   const configSection =
     data.configRepos.length > 0
       ? data.configRepos
           .map(
             (r, index) =>
               `${index + 1}. [${r.fullName}](${r.url})` +
+              ` dailyStars:${r.todayStars ?? "unknown"}` +
               (r.language ? ` [${r.language}]` : "") +
               ` ⭐${r.stargazersCount.toLocaleString()}` +
               (r.forksCount > 0 ? ` 🍴${r.forksCount.toLocaleString()}` : "") +
@@ -71,7 +71,7 @@ export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: L
 ## Data Sources
 - **Trending List** (github.com/trending, today's stars most reliable): Real-time hot list with today's new stars
 - **Topic Search** (GitHub Search API, topic tags): AI-related projects active in last 7 days, grouped by topic
-- **Config Candidates** (GitHub Search API, inspired by sindresorhus/awesome AI and developer-tool categories): top-starred AI repositories that may be useful to configure locally
+- **Config Candidates**: today's verified AI Repository Top 10 report, ranked by daily new stars in sampled GitHub Trending lists. Preserve its order and advice; this is not an exhaustive all-GitHub ranking.
 
 ---
 
@@ -118,11 +118,11 @@ Generate a structured AI Open Source Trends Report in English:
 
 3. **Top 10 AI Repositories to Ask Codex About** — From "Top AI Repository Candidates to Ask Codex About", render exactly one **Markdown table** with 10 rows when data is available. Treat them as candidates for the user to ask Codex about later and decide manually; do not imply automatic installation or configuration:
 
-   | Rank | Repository | Stars | What it does | Codex decision note |
+   | Rank | Repository | Daily / total Stars | What it does | Codex decision note |
    | ---: | :--- | ---: | :--- | :--- |
 
    - **Repository**: repository name as a Markdown link to its GitHub URL
-   - **Stars**: copy the total star count from the input verbatim
+   - **Stars**: copy dailyStars and total stars from input; keep input rank order. Never substitute totals for daily growth. If candidates are missing, state that today's verified picks are unavailable; do not invent replacements.
    - **What it does**: 1 concise sentence describing the feature or capability
    - **Codex decision note**: start with one of "Worth asking Codex", "Maybe", or "Skip", then give 1 concise reason tailored to a local AI/Codex/Claude Code/DeepSeek/agent workflow and what the user should ask Codex to evaluate next
    - Prefer practical local tools, MCP servers, agent frameworks, templates, SDKs, RAG/knowledge tools, and AI coding utilities. If a repo is only a library/model with no practical local configuration value, mark it "Maybe" or "No".
@@ -143,7 +143,7 @@ Style: English, professional and concise, must include GitHub links for every pr
 ## 数据说明
 - **Trending 榜单**（github.com/trending，今日 stars 数最可信）：今日实时热榜，含今日新增 stars
 - **主题搜索**（GitHub Search API，topic 标签）：7天内活跃的 AI 相关项目，按主题分类
-- **配置候选**（GitHub Search API，参考 sindresorhus/awesome 的 AI 与开发工具分类思路）：按 star 排序筛选可能适合本地配置的 AI 仓库
+- **配置候选**：今日已验证的独立 Top 10 报告，按所采集 GitHub Trending 榜单的今日新增 Stars 排序；不是全 GitHub 的穷尽排名。保留输入顺序及配置建议。
 
 ---
 
@@ -190,13 +190,13 @@ ${configSection}
 
 3. **值得在 Codex 里追问的 GitHub AI 仓库 Top 10** — 从“供 Codex 追问决策的 AI 仓库候选 Top 10”中输出一张 **Markdown 表格**；有 10 个候选时必须列满 10 行。它们只是给用户后续在 Codex 里继续询问、评估和决定是否配置的候选，不要写成自动安装或自动配置：
 
-   | 排名 | 仓库 | Stars | 功能简介 | Codex 决策建议 |
+   | 排名 | 仓库 | 今日新增 / 总 Stars | 功能简介 | Codex 决策建议 |
    | ---: | :--- | ---: | :--- | :--- |
 
    - **仓库**：仓库名，做成指向 GitHub 的 Markdown 链接
-   - **Stars**：照抄输入中的总 star 数，不要重算
+   - **Stars**：照抄 dailyStars 和总 Stars，保留输入顺序。若配置候选缺失，说明今日报告尚未就绪，不要用总 Stars 榜冒充今日榜，也不要自行补足十项。
    - **功能简介**：1 句说明它能做什么
-   - **Codex 决策建议**：必须以“值得问 Codex / 可观望 / 先跳过”开头，再用 1 句话说明原因，并点明用户下一步可让 Codex 评估什么；判断要贴合本地 AI 工作流，例如 Codex、Claude Code、DeepSeek、Pi Agent、MCP、RAG、知识库、浏览器插件、自动化脚本等
+   - **Codex 决策建议**：沿用输入的“值得配置 / 可观望 / 不建议配置”结论和理由，附 Windows 兼容性、成本及与已有工具的重叠；不得把初评改写为已安装验证。用户自行决定后再配置。
    - 优先推荐实际可本地配置的工具、MCP 服务、Agent 框架、模板、SDK、RAG/知识库工具和 AI 编程工具；如果只是普通模型库或泛框架，给“可观望”或“不建议”。
 
 4. **趋势信号分析** — 200~300 字，从今日热榜中提炼：
@@ -926,4 +926,3 @@ ${lobstersText}
 语言要求：中文，简洁专业，保留所有原文链接。
 `;
 }
-

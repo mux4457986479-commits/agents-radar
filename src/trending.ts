@@ -27,6 +27,7 @@ export interface SearchRepo {
 }
 
 export interface ConfigRepo {
+  todayStars?: number;
   fullName: string;
   description: string | null;
   language: string | null;
@@ -81,9 +82,11 @@ const CONFIG_SEARCH_QUERIES = [
 // GitHub Trending HTML fetch
 // ---------------------------------------------------------------------------
 
-async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: boolean }> {
+export async function fetchGitHubTrending(
+  language = "",
+): Promise<{ repos: TrendingRepo[]; success: boolean }> {
   try {
-    const resp = await fetchWithTimeout("https://github.com/trending?since=daily&spoken_language_code=", {
+    const resp = await fetchWithTimeout(`https://github.com/trending/${language}?since=daily`, {
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; agents-radar/1.0)",
         Accept: "text/html",
@@ -215,7 +218,7 @@ async function searchAiRepos(sevenDaysAgo: string): Promise<SearchRepo[]> {
   return all;
 }
 
-async function searchConfigRepos(sevenDaysAgo: string): Promise<ConfigRepo[]> {
+async function _searchConfigRepos(sevenDaysAgo: string): Promise<ConfigRepo[]> {
   const token = process.env["GITHUB_TOKEN"] ?? "";
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
@@ -271,11 +274,34 @@ async function searchConfigRepos(sevenDaysAgo: string): Promise<ConfigRepo[]> {
 export async function fetchTrendingData(): Promise<TrendingData> {
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
 
-  const [{ repos: trendingRepos, success }, searchRepos, configRepos] = await Promise.all([
+  const [{ repos: trendingRepos, success }, searchRepos] = await Promise.all([
     fetchGitHubTrending(),
     searchAiRepos(sevenDaysAgo),
-    searchConfigRepos(sevenDaysAgo),
   ]);
+
+  const { readFile } = await import("node:fs/promises");
+  const { toCstDateStr } = await import("./date.ts");
+  let configRepos: ConfigRepo[] = [];
+  try {
+    const report = JSON.parse(await readFile("digests/ai-repo-picks-latest.json", "utf8"));
+    if (report.date === toCstDateStr(new Date())) {
+      configRepos = report.repos.map((r: import("./ai-repo-picks.ts").PicksReport["repos"][number]) => ({
+        fullName: r.fullName,
+        description: `${r.summary} ${r.verdict}: ${r.reason} ${r.requirements} ${r.overlap}`,
+        language: r.language,
+        stargazersCount: r.totalStars,
+        todayStars: r.todayStars,
+        forksCount: r.forks,
+        pushedAt: r.pushedAt,
+        url: r.url,
+        searchQuery: "daily-trending",
+      }));
+    }
+  } catch {
+    console.error(
+      "[trending/config] No current verified daily picks; do not substitute total-star rankings.",
+    );
+  }
 
   return { trendingRepos, searchRepos, configRepos, trendingFetchSuccess: success };
 }

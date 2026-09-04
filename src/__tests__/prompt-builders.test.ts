@@ -308,7 +308,12 @@ describe("buildTrendingPrompt", () => {
   });
 
   it("shows fetch failure message when trending fails", () => {
-    const data: TrendingData = { trendingRepos: [], searchRepos: [], configRepos: [], trendingFetchSuccess: false };
+    const data: TrendingData = {
+      trendingRepos: [],
+      searchRepos: [],
+      configRepos: [],
+      trendingFetchSuccess: false,
+    };
     const result = buildTrendingPrompt(data, "2026-03-09");
     expect(result).toContain("未能抓取");
   });
@@ -451,6 +456,3 @@ describe("buildHnPrompt", () => {
     expect(result).toContain("Hacker News");
   });
 });
-
-
-
