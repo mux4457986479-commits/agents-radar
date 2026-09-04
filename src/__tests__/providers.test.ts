@@ -225,11 +225,14 @@ describe("OpenAIProvider", () => {
     const p = new OpenAIProvider({ apiKey: "k", model: "gpt-test" });
     const result = await p.call("test prompt", 2048);
     expect(result).toBe("Hello from OpenAI");
-    expect(mockCreate).toHaveBeenCalledWith({
-      model: "gpt-test",
-      max_completion_tokens: 2048,
-      messages: [{ role: "user", content: "test prompt" }],
-    });
+    expect(mockCreate).toHaveBeenCalledWith(
+      {
+        model: "gpt-test",
+        max_completion_tokens: 2048,
+        messages: [{ role: "user", content: "test prompt" }],
+      },
+      { timeout: expect.any(Number), maxRetries: 0 },
+    );
   });
 
   it("throws on empty response", async () => {
@@ -355,7 +358,10 @@ describe("QwenProvider", () => {
 
       const p = new QwenProvider({ apiKey: "k" });
       await p.call("prompt", 128);
-      expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({ model: "qwen3.5-flash" }));
+      expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({ model: "qwen3.5-flash" }), {
+        timeout: expect.any(Number),
+        maxRetries: 0,
+      });
     }),
   );
 
@@ -367,7 +373,10 @@ describe("QwenProvider", () => {
 
       const p = new QwenProvider({ apiKey: "k" });
       await p.call("prompt", 128);
-      expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({ model: "qwen-flash" }));
+      expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({ model: "qwen-flash" }), {
+        timeout: expect.any(Number),
+        maxRetries: 0,
+      });
     }),
   );
 

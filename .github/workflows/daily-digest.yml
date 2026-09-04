@@ -89,7 +89,13 @@ jobs:
           LLM_REQUEST_TIMEOUT_MS: 45000
           LLM_MAX_RETRIES: 0
         timeout-minutes: 35
-        run: timeout 34m pnpm start
+        run: |
+          DATE=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          PICKS_DATE=$(node -e 'try { console.log(JSON.parse(require("fs").readFileSync("digests/ai-repo-picks-latest.json", "utf8")).date) } catch { console.log("missing") }')
+          if [ "$PICKS_DATE" != "$DATE" ]; then
+            timeout 12m pnpm exec tsx src/ai-repo-picks.ts
+          fi
+          timeout 34m pnpm start
 
       - name: Commit digest files
         run: |
@@ -136,8 +142,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DIGEST_REPO: ${{ github.repository }}
         run: pnpm close-stale
-
-
-
-
-

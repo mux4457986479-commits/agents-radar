@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import fs from "node:fs";
+import path from "node:path";
 
 // ---------------------------------------------------------------------------
 // Mock provider — intercepts createProvider() so the module-level `provider`
@@ -90,17 +91,21 @@ describe("saveFile", () => {
 
   it("returns the expected file path", () => {
     const result = saveFile("content", "2026-03-09", "ai-cli.md");
-    expect(result).toBe("digests/2026-03-09/ai-cli.md");
+    expect(result).toBe(path.join("digests", "2026-03-09", "ai-cli.md"));
   });
 
   it("creates parent directories recursively", () => {
     saveFile("content", "2026-03-09", "ai-cli.md");
-    expect(fs.mkdirSync).toHaveBeenCalledWith("digests/2026-03-09", { recursive: true });
+    expect(fs.mkdirSync).toHaveBeenCalledWith(path.join("digests", "2026-03-09"), { recursive: true });
   });
 
   it("writes content as utf-8", () => {
     saveFile("hello world", "2026-03-09", "test.md");
-    expect(fs.writeFileSync).toHaveBeenCalledWith("digests/2026-03-09/test.md", "hello world", "utf-8");
+    expect(fs.writeFileSync).toHaveBeenCalledWith(
+      path.join("digests", "2026-03-09", "test.md"),
+      "hello world",
+      "utf-8",
+    );
   });
 });
 
@@ -294,25 +299,18 @@ describe("callLlm", () => {
 
   it("retries up to MAX_RETRIES times then throws", async () => {
     const err429 = Object.assign(new Error("rate limited"), { status: 429 });
-    mockCall
-      .mockRejectedValueOnce(err429)
-      .mockRejectedValueOnce(err429)
-      .mockRejectedValueOnce(err429)
-      .mockRejectedValueOnce(err429);
+    mockCall.mockRejectedValue(err429);
 
     const promise = callLlm("prompt", 1024);
     // Attach a no-op catch immediately so Node doesn't flag unhandled rejection
     // before the expect() below gets a chance to inspect the rejection.
     promise.catch(() => {});
 
-    // Advance through all 3 retry backoffs: 5s, 10s, 20s
+    // The default is one retry after the initial request.
     await vi.advanceTimersByTimeAsync(5_000);
-    await vi.advanceTimersByTimeAsync(10_000);
-    await vi.advanceTimersByTimeAsync(20_000);
 
     await expect(promise).rejects.toThrow("rate limited");
-    // 1 initial + 3 retries = 4 total calls
-    expect(mockCall).toHaveBeenCalledTimes(4);
+    expect(mockCall).toHaveBeenCalledTimes(2);
   });
 
   it("retries on a connection error", async () => {

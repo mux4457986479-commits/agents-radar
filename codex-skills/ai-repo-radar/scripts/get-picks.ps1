@@ -14,6 +14,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Unable to retrieve the latest AI repository report.' }
     $report = ($json -join "`n") | ConvertFrom-Json
 }
+if ($report -is [string]) { $report = $report | ConvertFrom-Json }
 if ($report.schemaVersion -ne 1 -or @($report.repos).Count -ne 10) { throw 'Invalid or incomplete report; expected ten verified repositories.' }
 $today = [DateTimeOffset]::UtcNow.ToOffset([TimeSpan]::FromHours(8)).ToString('yyyy-MM-dd')
 if ($AsJson) {

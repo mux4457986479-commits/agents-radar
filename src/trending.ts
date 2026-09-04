@@ -64,20 +64,6 @@ const SEARCH_QUERIES = [
   { q: "topic:machine-learning", label: "ml" },
 ];
 
-const CONFIG_SEARCH_QUERIES = [
-  { q: "topic:ai-agent stars:>500 pushed:>__SINCE__", label: "ai-agent" },
-  { q: "topic:mcp stars:>200 pushed:>__SINCE__", label: "mcp" },
-  { q: "topic:llm stars:>1000 pushed:>__SINCE__", label: "llm" },
-  { q: "topic:rag stars:>500 pushed:>__SINCE__", label: "rag" },
-  { q: "topic:ai-cli stars:>100 pushed:>__SINCE__", label: "ai-cli" },
-  { q: "claude code stars:>100 pushed:>__SINCE__", label: "claude-code" },
-  { q: "codex ai stars:>100 pushed:>__SINCE__", label: "codex" },
-  { q: "cursor ai stars:>100 pushed:>__SINCE__", label: "cursor" },
-  { q: "cline ai stars:>100 pushed:>__SINCE__", label: "cline" },
-  { q: "awesome llm stars:>100 pushed:>__SINCE__", label: "awesome-llm" },
-  { q: "ai agent template stars:>100 pushed:>__SINCE__", label: "agent-template" },
-];
-
 // ---------------------------------------------------------------------------
 // GitHub Trending HTML fetch
 // ---------------------------------------------------------------------------
@@ -216,55 +202,6 @@ async function searchAiRepos(sevenDaysAgo: string): Promise<SearchRepo[]> {
   );
 
   return all;
-}
-
-async function _searchConfigRepos(sevenDaysAgo: string): Promise<ConfigRepo[]> {
-  const token = process.env["GITHUB_TOKEN"] ?? "";
-  const headers: Record<string, string> = {
-    Accept: "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-  };
-  if (token) headers["Authorization"] = `Bearer ${token}`;
-
-  const seen = new Map<string, ConfigRepo>();
-
-  await Promise.all(
-    CONFIG_SEARCH_QUERIES.map(async ({ q, label }) => {
-      try {
-        const query = q.replace("__SINCE__", sevenDaysAgo);
-        const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(
-          query,
-        )}&sort=stars&order=desc&per_page=10`;
-        const resp = await fetchWithTimeout(url, { headers });
-        if (!resp.ok) {
-          console.error(`  [trending/config] "${label}": HTTP ${resp.status}`);
-          return;
-        }
-        const data = (await resp.json()) as SearchApiResponse;
-        let added = 0;
-        for (const item of data.items ?? []) {
-          if (!seen.has(item.full_name)) {
-            seen.set(item.full_name, {
-              fullName: item.full_name,
-              description: item.description,
-              language: item.language,
-              stargazersCount: item.stargazers_count,
-              forksCount: item.forks_count ?? 0,
-              pushedAt: item.pushed_at,
-              url: item.html_url,
-              searchQuery: label,
-            });
-            added++;
-          }
-        }
-        console.log(`  [trending/config] "${label}": ${added} new repos`);
-      } catch (err) {
-        console.error(`  [trending/config] "${label}": ${err}`);
-      }
-    }),
-  );
-
-  return [...seen.values()].sort((a, b) => b.stargazersCount - a.stargazersCount).slice(0, 10);
 }
 
 // ---------------------------------------------------------------------------
