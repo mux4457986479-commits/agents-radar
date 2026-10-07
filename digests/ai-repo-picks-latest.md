@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-04
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-07
 
-采集时间：2026-10-04T00:36:47.256Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-10-07T01:32:06.785Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 1696 | 89799 | 为 AI 代理提供网页、GitHub、视频及社交平台的读取与搜索 CLI。 | 可观望：可补充知识库与自动化所需的外部网页/视频/社交数据源，但需配置多平台 Cookie 和浏览器登录，Windows 原生兼容未确认；先核对现有 MCP/抓取能力再试。 | Python 3.10+、Node.js、gh CLI、mcporter/Exa MCP；部分平台需 Cookie 或桌面浏览器登录；Windows 原生兼容性未确认。 | 与 Codex、Claude Code、Pi Agent 现有网页搜索、MCP 或 GitHub CLI 可能重叠；需核对已有配置。 |
-| 2 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 1281 | 153402 | 约束 AI 代理按 YAGNI 最小实现写代码，并提供审查/审计技能。 | 值得配置：直接支持你用的 Codex、Claude Code、Pi Agent，可在工程审查与自动化编码中抑制过度设计；属提示/技能层，建议先在小项目验证规则冲突。 | 需 Node.js 在 PATH；Claude Code、Codex、Pi Agent 可用插件安装；Cursor 需 hooks 或规则文件；额外 API 费用未确认。 | 与现有 Codex、Claude Code、Pi Agent 的规则和代码审查流程重叠；可作最小实现约束补充。 |
-| 3 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 897 | 272245 | 为编码智能体提供计划、测试、记忆、安全与审查流程层。 | 值得配置：支持 Claude Code/Codex，覆盖计划、审查、记忆和自动化，贴合工程审查与知识沉淀；但会写入 hooks/技能，需核对已有配置并控制范围。 | MIT 开源；安装需 Node.js 18+、Git，Claude Code 2.1+；支持 Windows PowerShell 与 Codex 引导安装；私仓 Pro 约 $19/席/月；模型 API 费用未确认。 | 与现有智能体技能、记忆、审查钩子可能重叠；作为补充需核对已有 Codex/Claude 配置。 |
-| 4 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 699 | 75296 | 为 AI 编码工具提供前端设计审查、润色与检测规则。 | 不建议配置：用户重点在办公文档、工程审查、知识库与自动化；除频繁做前端界面外，收益有限且会引入 hooks。 | 技能本身无运行时；npx 安装需 Node；Windows 有 .cmd；Codex hooks 需信任批准；确定检测无 API key，LLM 评审依赖所用模型，费用未确认。 | 与已有 Codex/Claude Code 前端设计技能或钩子可能重叠，需核对配置。 |
-| 5 | [obra/superpowers](https://github.com/obra/superpowers) | 577 | 294913 | 为编码代理提供可组合技能与开发方法论插件。 | 值得配置：用户主力是 Codex、Claude Code、Pi，README 明确支持这些安装路径，可强化规划、TDD、子代理审查流程；但对办公文档和知识库直接帮助有限。 | 安装方式随 Claude Code、Codex、Pi 等宿主不同；未确认 Windows 原生兼容性、硬件要求及是否产生额外 API 费用，需按宿主核验。 | 与现有编码代理的规划/审查流程存在重叠或补充；插件式技能是否需另配需核对已有配置。 |
-| 6 | [mvschwarz/openrig](https://github.com/mvschwarz/openrig) | 517 | 4681 | 用 YAML 编排 Claude Code、Codex 等代理团队并共享上下文。 | 不建议配置：多代理编排适合自动化与工程审查，但 README 明确 Windows 原生不支持、WSL2 未测试；在用户 Windows 环境部署风险高，宜暂缓。 | 需 Node.js 22/24 与 tmux，限 macOS/Linux；Windows 原生不支持，WSL2 未测试；可选 Docker；API 收费与硬件要求未确认。 | 与 Claude Code、Codex、Pi 的多代理协作有重叠/补充；是否已有同类编排工具需核对。 |
-| 7 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 507 | 109533 | 用极简表达和输出压缩降低编码 agent 的 token 消耗 | 可观望：用户跑 Claude Code、Codex、Pi，token 成本值得压缩；但模因化表达会拖累办公文档和工程审查报告的可读性，且 README 宣传数据需自行实测，故先观望。 | README 称需 Node.js 22.13+，提供 PowerShell 安装脚本，Windows 原生可用；代理在本机运行。是否有额外收费、与 DeepSeek 的兼容性均未确认。 | 属于 agent 侧叠加配置，不替代现有工具；需核对是否已有 token 压缩、缓存或模型路由方案。 |
-| 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 499 | 56310 | 将 HTML/CSS 动画渲染成确定性 MP4 视频的 agent 工具 | 可观望：若要把 PR、技术说明或产品内容批量生成短视频，它可作为 Codex、Claude Code 技能接入；用户主线是文档、审查与知识库，视频产出需求未明，宜观望。 | 需 Node.js 22+；git-lfs 在 Windows 可用 winget 安装；渲染依赖浏览器/ffmpeg，硬件要求、是否需付费 API 均未确认。 | 通过技能/插件接入 Codex、Claude Code，与现有 agent 生态共存；与办公文档、知识库无直接重叠，视是否需要视频产物而定。 |
-| 9 | [earendil-works/pi](https://github.com/earendil-works/pi) | 408 | 112156 | 统一 LLM API 的可扩展编码代理 CLI 与 TypeScript 工具包 | 值得配置：与用户已用的 Pi Agent 同源，可统一多模型接入、脚本化/JSON/RPC 自动化，并支持 Windows 原生安装；需自行加沙箱。 | Windows 可用 PowerShell 安装，需 Node.js 22.19+；也可 npm 全局安装。模型需订阅或 API Key，费用未确认；无内置权限系统，建议容器/沙箱。Nix 仅 Linux/macOS。 | 与 Pi Agent 直接重叠，需核对现有安装与配置；可与 Codex、Claude Code 按场景并用。 |
-| 10 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 345 | 52694 | 面向 Claude Code、Codex 等代理的营销技能集合 | 不建议配置：技能集中于 CRO、SEO、文案、广告与增长，与办公文档、工程审查、知识库和自动化主线关联弱；且含赞助推广内容。 | 通过 npx skills、Claude Code 插件或 Codex 插件安装；需支持 Agent Skills 的代理。Windows 兼容、Node 版本与 API 费用未确认。 | 与现有 Codex、Claude Code 技能机制重叠，但领域与用户文档/审查/知识库目标不匹配，需核对已有配置。 |
+| 1 | [morluto/rea](https://github.com/morluto/rea) | 2956 | 9545 | 面向二进制的逆向分析 MCP，连接代理检查应用与原生程序。 | 不建议配置：用户重点在办公文档、工程审查、知识库与自动化，逆向分析非核心场景；Windows 支持仍实验性，且需额外分析引擎，投入产出低。 | Node.js 22+、npm；深度原生分析需 Hopper/Ghidra/IDA，Hopper 需许可；Windows 仅实验性 x64 Ghidra；WSL/Docker 与 API 收费未确认。 | 与 Codex/Claude Code 的 MCP 能力可接入；若已有逆向或二进制审查工具需核对，否则无直接重叠。 |
+| 2 | [DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym) | 1419 | 5723 | 自托管健身与体重追踪 PWA，含训练计划、记录和统计。 | 不建议配置：用户关注办公文档、工程审查、知识库和自动化，健身追踪与这些目标无关；虽可自托管并有 MCP，但非工作流工具，配置价值低。 | Docker Compose；首次下载约 140MB 媒体；passkey 跨设备通常需 HTTPS 域名；AI 教练需自备 Anthropic/OpenAI/Gemini/Ollama 密钥；硬件与 API 收费未确认。 | 与办公、知识库、自动化工具基本无重叠；可选 MCP 仅供训练历史问答，需与已有 MCP 配置核对。 |
+| 3 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 860 | 156864 | 用提示词约束编码代理少写代码、避免过度设计 | 值得配置：直接支持 Codex 和 Claude Code，提供 diff 审查与过度工程清理命令，契合工程审查场景；效果受宿主模型影响，需小范围验证。 | 按 README 用 Claude Code/Codex 插件或复制 AGENTS.md/SKILL.md；Windows 原生/WSL/Docker 未说明；Node/npm 版本未确认；无硬件要求；API 费用取决于宿主。 | 与已有 Codex/Claude Code 审查流程可能重叠，需核对；README 提及 pi，可作补充。 |
+| 4 | [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) | 857 | 64701 | 把 AI 编码助手接成智能视频制作流水线 | 不建议配置：核心是视频生成与剪辑，偏离办公文档、工程审查和知识库主线；依赖、外部密钥和维护成本高，除非明确要做视频自动化。 | README 给 Windows PowerShell 步骤，需 Python 3.10+、FFmpeg、Node 18+；未提 Docker/WSL；高级生成多用 API 收费，零密钥仅部分免费；GPU 可选。 | 与现有办公、知识库、工程审查工具重叠少，主要补充视频自动化；需核对已有媒体处理配置。 |
+| 5 | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) | 857 | 92649 | 给 AI Agent 提供网页、社交平台与 RSS 等联网读取和搜索 CLI。 | 可观望：你常用 Claude Code/Codex，可补充外部资料采集与知识库自动化；但部分平台依赖登录态、Cookie 和浏览器会话，Windows 兼容与长期稳定性未确认，建议先试零配置渠道。 | Python 3.10+；部分渠道需 Node.js、gh CLI、mcporter、Exa MCP 和登录 Cookie/Chrome 会话；默认安装只检查，--system 才改系统；README 称服务器代理约 $1/月；Windows 兼容未确认。 | 与 Claude Code/Codex 的 MCP、浏览器自动化、爬虫脚本可能重叠；可补充知识库外部检索。需核对已有配置。 |
+| 6 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 727 | 274314 | 面向 Claude Code、Codex 等代理的工程流程、技能、记忆与安全增强系统。 | 值得配置：你已用 Claude Code、Codex，ECC 有 Windows 指引并覆盖审查、记忆、安全和技能工作流，贴合工程审查与自动化；安装会写入插件/hooks，建议先 dry-run 并核对现有配置。 | Node.js 18+、Git；Claude Code 2.1+；支持 Codex 引导安装和 Kimi Code；Windows 有 PowerShell 步骤。开源 MIT，Pro 私有仓库 $19/座位/月起，具体以官方为准。 | 与 Claude Code/Codex 原生插件、skills、MCP、代码审查工具可能重叠；安装前需核对已有配置，避免叠加冲突。 |
+| 7 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 636 | 57964 | 把 HTML、CSS 与动画渲染为确定性 MP4 的框架，附 CLI 和 Agent 技能插件 | 可观望：与其办公文档、工程审查、知识库主线不直接相关；只有在需要自动化产出演示或汇报视频、且已用 Codex/Claude Code 时才值得试，Windows 依赖链需实测。 | Node.js ≥22 与 npx；源码资源用 Git LFS，Windows 可用 winget 安装；主题标签涉及 Puppeteer、ffmpeg。硬件要求、API 收费、Windows 原生稳定性未确认。 | 与 Codex/Claude Code 的 skill 生态重叠；与文档、知识库流程无交集；视频渲染属新增能力，需核对已有配置。 |
+| 8 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | 636 | 65311 | 523 课时 AI 工程自学课程，附可装入 Agent 的 skill 与练习产物 | 可观望：属教程资料而非生产工具，与日常文档、审查、知识库交付无直接产出；仅在想系统补 MCP 或 Agent Skills 原理时值得看，装 skill 前先核对已有配置。 | 需 Node.js、npx、python3 才能跑实验；需受支持的 skill 主机与可写目录；完整实验要 clone 仓库。是否需付费 API、硬件要求未确认。 | 课程 skill 会写入 Codex/Claude Code 技能目录，可能与已有 skill 重叠；与文档、审查、知识库工作无功能重叠。 |
+| 9 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 623 | 157838 | 多工具可用的 AI 专家代理人格与提示词集合，可按团队安装。 | 可观望：含工程审查、技术写作等代理，但整包庞杂且主要是提示词，实际质量需筛选实测；与现有 Codex/Claude Code 配置是否重复需核对。 | MIT；提供 Windows 桌面应用，也可用 Shell 脚本安装；声称支持 Codex、Claude Code 等；需网络；模型/API 费用取决于运行时，未确认；Pi Agent 支持未确认。 | 与 Claude Code、Codex 的子代理/提示词配置重叠；工程审查、技术文档可补充，需核对已有代理。 |
+| 10 | [earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad) | 619 | 17991 | 为代理提供本地文本生成 CAD、工程图与制造检查能力。 | 不建议配置：面向机械 CAD/制造，偏离办公文档与知识库主线；Windows 原生受 Smart App Control 阻挡，需关闭或转 WSL，除非有明确 CAD 需求否则不建议优先配置。 | 需 uv、Python 3.11+、Node.js 20+，首次联网下载运行时；Windows 11 Smart App Control 可能阻止 OCP，需关闭或 WSL；API 收费与 Pi Agent 支持未确认。 | 可接入 Claude Code、Codex，补充 CAD/工程审查；与办公文档、知识库、自动化重叠低，需核对已有工程插件。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
+- [morluto/rea README](https://github.com/morluto/rea#readme)；最近推送 2026-10-06T21:25:19Z；许可证 MIT
+- [DuarteSantos8/openGym README](https://github.com/DuarteSantos8/openGym#readme)；最近推送 2026-10-06T09:42:32Z；许可证 AGPL-3.0
+- [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-10-05T20:46:39Z；许可证 MIT
+- [calesthio/OpenMontage README](https://github.com/calesthio/OpenMontage#readme)；最近推送 2026-10-03T16:28:55Z；许可证 AGPL-3.0
 - [Panniantong/Agent-Reach README](https://github.com/Panniantong/Agent-Reach#readme)；最近推送 2026-09-15T16:16:24Z；许可证 MIT
-- [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-10-03T05:12:55Z；许可证 MIT
-- [affaan-m/ECC README](https://github.com/affaan-m/ECC#readme)；最近推送 2026-10-02T02:01:14Z；许可证 MIT
-- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-10-03T07:35:50Z；许可证 Apache-2.0
-- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-09-27T02:37:47Z；许可证 MIT
-- [mvschwarz/openrig README](https://github.com/mvschwarz/openrig#readme)；最近推送 2026-10-04T00:27:33Z；许可证 Apache-2.0
-- [JuliusBrussee/caveman README](https://github.com/JuliusBrussee/caveman#readme)；最近推送 2026-10-03T08:07:10Z；许可证 Apache-2.0
-- [heygen-com/hyperframes README](https://github.com/heygen-com/hyperframes#readme)；最近推送 2026-10-04T00:33:15Z；许可证 Apache-2.0
-- [earendil-works/pi README](https://github.com/earendil-works/pi#readme)；最近推送 2026-10-03T23:29:01Z；许可证 MIT
-- [coreyhaines31/marketingskills README](https://github.com/coreyhaines31/marketingskills#readme)；最近推送 2026-10-03T01:51:50Z；许可证 MIT
+- [affaan-m/ECC README](https://github.com/affaan-m/ECC#readme)；最近推送 2026-10-05T04:55:16Z；许可证 MIT
+- [heygen-com/hyperframes README](https://github.com/heygen-com/hyperframes#readme)；最近推送 2026-10-07T01:30:36Z；许可证 Apache-2.0
+- [rohitg00/ai-engineering-from-scratch README](https://github.com/rohitg00/ai-engineering-from-scratch#readme)；最近推送 2026-10-06T19:16:22Z；许可证 MIT
+- [msitarzewski/agency-agents README](https://github.com/msitarzewski/agency-agents#readme)；最近推送 2026-10-06T17:53:59Z；许可证 MIT
+- [earthtojake/text-to-cad README](https://github.com/earthtojake/text-to-cad#readme)；最近推送 2026-10-07T01:22:00Z；许可证 MIT
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
