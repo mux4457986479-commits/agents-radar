@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-23
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-24
 
-采集时间：2026-10-23T00:39:40.102Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-10-24T00:39:53.685Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 1948 | 173458 | 给编程代理加入少写代码、代码审查和仓库审计技能。 | 值得配置：可直接接入 Codex/Claude Code 做工程审查和审计，先用小项目验证其提示词对代码风格与测试的影响。 | Codex/Claude Code 插件或 AGENTS.md；可能需 Node/npm；模型调用按现有 API 计费；Windows 兼容细节未确认。 | 与 Codex/Claude Code 内置审查及现有规则/技能可能重叠，需核对；补充审查与审计命令。 |
-| 2 | [stablyai/orca](https://github.com/stablyai/orca) | 1689 | 102755 | 多代理编排桌面端，支持并行 worktree、终端和移动监控。 | 可观望：Windows 桌面可用，适合并行多代理与审查；但会引入完整 IDE/编排层，需先核对与现有 Codex、Claude Code、Pi 工作流的重叠和迁移成本。 | Windows 原生安装包；需自备代理账号/订阅或 API；硬件要求与离线能力未确认。 | 与 Codex/Claude Code/Pi 的终端和审查流程重叠；补充并行 worktree 与移动端监控。 |
-| 3 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 1408 | 132937 | 将代码库、文档、SQL与PDF转为可查询知识图谱，接入Codex/Claude Code。 | 值得配置：契合你用Codex/Claude Code做工程审查和知识库查询，支持Windows及Pi；建议先用代码图谱试点，文档语义处理需接受模型或API成本。 | Windows需Python 3.10+与uv/pipx；代码AST本地解析；PDF/Office需可选依赖，语义处理依赖所用模型或API，可能收费；Codex需multi_agent。 | 与Claude Code/Codex自带代码搜索及你的知识库有重叠；宜作为代码关系查询补充，需核对已有配置。 |
-| 4 | [supabase/supabase](https://github.com/supabase/supabase) | 693 | 113481 | 基于Postgres的开发平台，提供认证、REST/GraphQL、存储与向量能力。 | 可观望：主要用于Web/移动应用后端；你的办公文档与工程审查流程未显示需要自建数据库。若知识库需多用户、存储或pgvector再评估。 | 可托管或自托管；自托管通常需Docker及运维，资源未确认；托管服务和用量可能收费，具体未确认。 | 与知识库的存储/检索层可能重叠；需核对已有数据库、向量库和自动化栈后再定。 |
-| 5 | [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 681 | 142012 | 节点式本地生成图像、视频、音频和3D的工作流引擎 | 不建议配置：与办公文档、工程审查和知识库主线关联弱；若仅需文本处理，投入GPU与模型管理成本不划算，需确认有视觉生成需求。 | 有Windows桌面版和便携包；显存与磁盘门槛随模型变化，官方称最低4GB显存但实际未确认；核心可离线，API节点可选付费；GPL-3.0。 | 与现有文本办公、审查、知识库工具重叠低；可作为媒体生成补充，需核对已有配置。 |
-| 6 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 630 | 101120 | 给编程代理提供前端设计方向、真实图片和浏览器自检的Agent技能 | 可观望：可接入Codex或Claude Code，但面向网页与后台界面设计，不直接服务文档审查和知识库；构建耗token，宜有内部工具UI需求再试。 | 需Node 22+与Chrome/Edge/Chromium，无需API密钥，联网找图；README称单次构建约30至45分钟、数十万token；Windows兼容未确认。 | 为Codex或Claude Code增加前端设计技能，需核对已有技能；与办公文档、工程审查和知识库流程无直接替代。 |
-| 7 | [obra/superpowers](https://github.com/obra/superpowers) | 628 | 303744 | 为编码代理提供需求澄清、计划、子代理开发与评审的技能框架。 | 值得配置：与 Codex、Claude Code、Pi 的适配明确，可把工程审查和自动化开发纳入可复核流程；但主要面向软件开发，办公与知识库收益有限。 | 需对应代理的插件或 CLI 安装；Windows 原生兼容未确认；Git/网络可用；无独立硬件要求；模型调用费用由所用代理承担。 | 与现有编码代理的技能/插件机制重叠，补充结构化工作流；需核对已有配置。 |
-| 8 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 625 | 39596 | 聚合多家 LLM 免费额度为统一 OpenAI 兼容接口，支持路由与故障切换。 | 可观望：可减少多供应商密钥与限流管理，适合实验自动化；但免费额度、条款和端点稳定性会变，且定位为个人实验，不宜承载关键流程。 | Windows 有桌面安装包，也可用 Docker；需各供应商密钥并遵守配额条款；可选付费实时目录；兼容性与数据安全未完全确认。 | 与现有 DeepSeek/代理 API 接入有重叠，可作为多模型故障切换补充；需核对已有密钥与代理配置。 |
-| 9 | [twentyhq/twenty](https://github.com/twentyhq/twenty) | 605 | 59538 | 开源 CRM，支持自托管、应用扩展与 AI 代理。 | 可观望：与办公文档、知识库和自动化仅有间接关系；除非需要客户或销售数据管理，否则配置收益有限，自托管还需维护 Docker 服务。 | 自托管需 Docker Compose；云版和本地硬件要求未确认；许可为 NOASSERTION，商用前需核对条款；API 收费未确认。 | 可能补充 CRM 与客户数据管理；与现有文档知识库、自动化及代理工具需核对边界。 |
-| 10 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 587 | 84980 | 面向 AI 编程代理的前端设计审查技能与规则检测器。 | 值得配置：可与 Codex、Claude Code、Pi 等代理配合，补充前端 UI 设计审查；但仅覆盖界面质量，安装会写 hooks，需先审阅信任设置。 | Windows 有 cmd 启动器；npx 安装为 shim，手动或 Git 方式可免 Node；首次可能下载引擎二进制；确定性检测无需 API key；代理 hooks 需审阅批准。 | 与现有代理技能和工程审查流程可能重叠；仅补前端设计审查，需核对已有配置。 |
+| 1 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 1575 | 174800 | 通过代理技能约束编码代理少写代码，并提供审查与仓库审计命令。 | 可观望：与工程审查相关，但主要改变编码代理写码风格；效果来自项目自述，宜先在 Codex/Claude Code 小项目验证，避免与现有规则冲突。 | MIT；依赖现有代理，安装方式为 Claude Code/Codex 插件或复制技能；Windows 原生兼容未明确，额外 API 费用未确认。 | 与现有 Codex/Claude Code 规则及审查流程可能重叠；需核对已有配置后再启用。 |
+| 2 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | 1173 | 133906 | 将代码、文档、SQL、配置与 PDF 转为可查询知识图谱。 | 值得配置：直接补充知识库与工程审查：支持 Codex、Claude Code、Pi，Windows 有安装说明；本地 AST 解析代码，文档/PDF 语义处理需评估 API 与隐私。 | Python 3.10+，uv 或 pipx；Windows 有说明；PDF/Office 需可选 extras；文档/PDF 语义处理可能调用模型/API，收费与硬件未确认。 | 可能与你现有知识库/RAG及代码检索重叠；宜作为图谱检索层，先核对已有配置。 |
+| 3 | [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) | 1119 | 18793 | 为 AI Agent 提供内核级隔离沙箱和文件/网络策略执行 | 可观望：Windows 仅 WSL2 实验支持，部署依赖 Docker/Podman；适合高权限自动化前的隔离评估，暂非桌面首选 | Windows 需 WSL2（实验），另需 Docker/Podman 或虚拟化；模型 API 是否收费取决于所用 Agent；硬件未确认 | 与 Codex/Claude Code 的权限审批和沙箱可能重叠，需核对现有隔离配置 |
+| 4 | [stablyai/orca](https://github.com/stablyai/orca) | 1081 | 103877 | 并行运行 Codex、Claude Code 等 CLI Agent 的桌面编排器 | 值得配置：Windows 原生可用，贴合已有 Codex/Claude Code/Pi 工作流；先评估是否真的需要多 worktree 编排 | Windows 桌面安装；使用现有 Agent 订阅/API；多 Agent 并行对内存和 CPU 需求未确认 | 补充多 Agent 并行与 worktree 管理，可能重叠现有终端和 Codex/Claude Code 用法 |
+| 5 | [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto) | 1053 | 44010 | Claude Code 的图文教程与可复制配置模板合集 | 可观望：用户已用 Claude Code，可借鉴其命令、技能和钩子模板；但仓库以学习资料为主，需自行筛选并核对版本，不能直接提升现有流程。 | 仅指南/模板，无独立运行时或硬件要求证据；示例含 bash 命令，Windows 需调整；Claude Code 本身支持 Windows 原生；无额外 API 收费证据。 | 与现有 Claude Code 配置及官方文档重叠，补充代码审查、自动化模板；需核对已有命令和技能。 |
+| 6 | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | 635 | 32210 | 面向知识工作的 Claude 角色插件与工具连接器合集 | 值得配置：覆盖办公文档、企业搜索和知识库连接，可用 Claude Code 按需配置；但需筛选插件并核对现有 MCP/技能，连接器权限和费用未确认。 | 需 Claude Code 或 Cowork；插件为 Markdown/JSON，连接 Microsoft 365、Slack、Notion 等需账号授权；Windows 兼容性与 API 收费未确认。 | 补充办公文档、知识库和自动化工作流；与现有 MCP、技能可能重叠，需核对已有配置。 |
+| 7 | [obra/superpowers](https://github.com/obra/superpowers) | 563 | 304237 | 面向编码代理的技能与开发流程框架，含需求梳理、计划和TDD。 | 可观望：可增强 Codex、Claude Code 和 Pi 的工程开发流程，但与办公文档、知识库场景关联较弱，且自动触发技能可能影响现有习惯，建议先小范围试用。 | 需按 Claude Code、Codex、Pi 分别安装；材料以 Shell/技能为主，Windows 原生兼容性未确认；模型 API 费用未确认。 | 与 Codex/Claude Code/Pi 自带代理流程及已装技能可能重叠，需核对现有配置。 |
+| 8 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 541 | 85532 | 为编码代理提供前端设计审查、润色与规则检测技能。 | 不建议配置：功能集中在前端视觉设计与 UI 审查，与办公文档、工程审查、知识库和自动化的直接关联有限；除非已有前端界面项目，否则优先度低。 | 常用 npx 安装，提供 Windows .cmd；会写入代理 hooks，首次可能下载引擎二进制；模型调用费用未确认。 | 与现有代理技能/插件体系可能重叠，需核对已装设计类技能与 hooks。 |
+| 9 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | 485 | 113399 | 多智能体金融交易研究框架，模拟分析团队进行交易决策 | 不建议配置：面向金融交易研究与模拟，和办公文档、工程审查、知识库及自动化主线关联弱；还需配置行情与多家模型 API，投入收益不匹配。 | Python 3.11+ 或 Docker；需 LLM API；行情及社交数据源密钥按需配置；Windows 仅有编码修复记录，整体兼容性未确认；费用未确认。 | 与现有 Codex、Claude Code、DeepSeek 至多复用模型 API；需核对已有配置，功能基本不重叠。 |
+| 10 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 430 | 194681 | 抓取解析网页、PDF 和 DOCX 为 Markdown 或 JSON，供 AI 使用 | 值得配置：可补足 Codex、Claude Code 等代理获取网页与文档上下文的能力，服务知识库和自动化；但依赖外部 API，应按用量评估成本与数据合规。 | 可通过 npx 配置 MCP/CLI，提供 Python/Node SDK；需 Firecrawl API 密钥。托管服务可能计费，自托管及 Windows 原生兼容性未确认。 | 与现有代理的网页搜索、文档解析可能重叠；需核对已有 MCP、爬虫或知识库入库流程后再配置。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
 - [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-10-18T01:55:14Z；许可证 MIT
-- [stablyai/orca README](https://github.com/stablyai/orca#readme)；最近推送 2026-10-23T00:32:07Z；许可证 MIT
-- [Graphify-Labs/graphify README](https://github.com/Graphify-Labs/graphify#readme)；最近推送 2026-10-22T16:19:38Z；许可证 Apache-2.0
-- [supabase/supabase README](https://github.com/supabase/supabase#readme)；最近推送 2026-10-23T00:38:00Z；许可证 Apache-2.0
-- [Comfy-Org/ComfyUI README](https://github.com/Comfy-Org/ComfyUI#readme)；最近推送 2026-10-23T00:21:20Z；许可证 GPL-3.0
-- [Leonxlnx/taste-skill README](https://github.com/Leonxlnx/taste-skill#readme)；最近推送 2026-10-20T22:04:30Z；许可证 MIT
-- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-10-22T23:26:42Z；许可证 MIT
-- [tashfeenahmed/freellmapi README](https://github.com/tashfeenahmed/freellmapi#readme)；最近推送 2026-10-23T00:08:32Z；许可证 MIT
-- [twentyhq/twenty README](https://github.com/twentyhq/twenty#readme)；最近推送 2026-10-22T22:24:26Z；许可证 NOASSERTION
-- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-10-23T00:28:42Z；许可证 Apache-2.0
+- [Graphify-Labs/graphify README](https://github.com/Graphify-Labs/graphify#readme)；最近推送 2026-10-23T17:59:28Z；许可证 Apache-2.0
+- [NVIDIA/OpenShell README](https://github.com/NVIDIA/OpenShell#readme)；最近推送 2026-10-24T00:36:57Z；许可证 Apache-2.0
+- [stablyai/orca README](https://github.com/stablyai/orca#readme)；最近推送 2026-10-24T00:38:30Z；许可证 MIT
+- [luongnv89/claude-howto README](https://github.com/luongnv89/claude-howto#readme)；最近推送 2026-10-20T12:23:14Z；许可证 MIT
+- [anthropics/knowledge-work-plugins README](https://github.com/anthropics/knowledge-work-plugins#readme)；最近推送 2026-10-23T07:38:30Z；许可证 Apache-2.0
+- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-10-23T03:48:57Z；许可证 MIT
+- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-10-24T00:38:24Z；许可证 Apache-2.0
+- [TauricResearch/TradingAgents README](https://github.com/TauricResearch/TradingAgents#readme)；最近推送 2026-10-16T21:38:46Z；许可证 Apache-2.0
+- [firecrawl/firecrawl README](https://github.com/firecrawl/firecrawl#readme)；最近推送 2026-10-23T23:24:59Z；许可证 AGPL-3.0
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
