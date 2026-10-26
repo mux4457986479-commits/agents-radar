@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-25
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-10-26
 
-采集时间：2026-10-25T00:20:26.258Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-10-26T00:20:25.877Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) | 896 | 19470 | 为自主 AI 代理提供内核级沙箱与策略管控的运行时。 | 可观望：可为自动化代理提供文件、网络与凭据隔离，但 Windows 仅 WSL2 实验性且依赖容器或虚拟化，当前文档与审查场景部署成本偏高。 | Windows 需 WSL2（实验性）及 Docker/Podman 或主机虚拟化；是否产生额外 API 费用未确认。 | 与 Codex/Claude Code 的权限或沙箱机制可能重叠，需核对现有配置；可作为自动化执行隔离层补充。 |
-| 2 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 785 | 175527 | 让 AI 代理按 YAGNI 少写代码并执行审查与审计的技能。 | 值得配置：已支持 Codex 与 Claude Code，并提供审查、审计命令，契合工程审查；但效果基准为项目自述，建议先在非关键仓库验证。 | 需 Claude Code 或 Codex 的插件机制；其他代理可复制 AGENTS.md 或 SKILL.md；额外 API 费用与硬件要求未确认。 | 与 Codex/Claude Code 自带代码审查及提示词规则可能重叠，需核对当前插件和 AGENTS.md 配置。 |
-| 3 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 743 | 71483 | 将HTML/CSS与可定位动画渲染为确定性视频，并提供面向编码代理的技能。 | 可观望：与办公文档、工程审查、知识库和自动化主线关联弱；仅在需要把流程或汇报做成演示视频时有补充价值。 | 需Node.js≥22和浏览器/FFmpeg类渲染依赖；README给出Windows安装Git LFS步骤，但完整兼容性未确认；云渲染或素材服务可能收费。 | 可能补充现有代理的文档演示与汇报视频能力；需核对是否已有视频或演示工具，避免重复配置。 |
-| 4 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 715 | 40959 | 聚合多家免费LLM接口为统一OpenAI兼容端点，带路由、故障转移和密钥管理。 | 可观望：仅适合非敏感试验；办公文档与工程审查涉及数据外发、免费额度波动和合规风险，不宜作为主力链路。 | 提供Windows安装包，也可用Docker/Node；需自行注册多家提供商并保管API密钥；免费额度受限，实时目录有付费选项，安全与合规未确认。 | 与Codex、Claude Code、DeepSeek、Pi Agent的模型接入层可能重叠；需核对现有API网关与密钥管理后再决定。 |
-| 5 | [SnailSploit/Claude-Red](https://github.com/SnailSploit/Claude-Red) | 630 | 8840 | 面向 Claude 的攻防安全技能库，含多类 SKILL.md | 不建议配置：内容聚焦红队攻击与渗透方法，非办公文档、工程审查、知识库或自动化主线；未授权使用风险高，且与常规审查目标不匹配。 | 需 Claude Skills/Claude Code；安装脚本为 shell，Windows 原生支持未确认，可能需 WSL/Git Bash；模型 API 费用未确认。 | 与 Claude Code 技能机制重叠；仅在授权安全测试时补充，需核对现有安全技能配置。 |
-| 6 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 619 | 86392 | 为 AI 编码代理提供前端设计审查与迭代命令 | 可观望：主要提升 UI/前端设计与审查，与办公文档、工程审查、知识库和自动化主线关联弱；仅在前端项目有试用价值。 | 支持 Windows 启动器及 Codex/Claude Code；npx 安装需 Node，钩子需授权；浏览器迭代与 API 费用未确认。 | 与 Codex/Claude Code 的前端设计技能可能重叠；对办公与知识库补充有限，需核对已装技能。 |
-| 7 | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) | 524 | 32623 | 面向知识岗位的 Claude 插件集，含技能、命令和 MCP 连接器。 | 值得配置：已在用 Claude Code，可低成本试装 productivity 与 enterprise-search，补充办公、知识库技能；工程审查需自建插件。 | 需 Claude Code/Cowork 及对应 MCP 连接器；Windows 特定限制未说明；模型与服务费用未确认。 | 与 Claude Code 现有技能、命令、MCP 配置重叠；补充角色化模板，需核对已有配置。 |
-| 8 | [makecindy/cindy](https://github.com/makecindy/cindy) | 477 | 4090 | 聚合 Claude Code、Codex 等执行器的桌面/移动 AI Agent 客户端。 | 可观望：可统一编排 Claude Code/Codex 并做记忆、定时任务，但依赖云服务或模型授权，权限边界与成熟度需验证，且与现有代理链重叠。 | Windows 桌面端有 Electron/打包线索；源码需 Node 22、pnpm 10、Git LFS；云服务和模型计费未确认。 | 与 Claude Code、Codex 直接重叠；补充统一编排、记忆与定时任务，需核对已有配置。 |
-| 9 | [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | 455 | 32129 | 为编码代理提供网页设计主题与反AI风格检查技能 | 可观望：用户重心在办公文档与工程审查，网页设计非主线；若需生成或审查展示页可再评估。 | Node 18+；浏览器检查另需 Chrome 和 puppeteer-core；Windows 原生支持未明确说明。 | 与 Claude Code/Codex 的技能机制重叠，需核对已有前端或设计类技能。 |
-| 10 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | 452 | 88745 | 将想法、计划或代码库转为可交互HTML架构图与解释页 | 值得配置：工程审查时可由代码库生成架构图，辅助理解系统与评审；需核对代理集成和输出质量。 | Node ≥18；DeepSeek Harness 集成需 Node 22.19+/24+，属社区预览；Windows 兼容未声明；API 费用取决于所用代理。 | 与 Claude Code/Codex/DeepSeek 现有图表或文档生成能力可能重叠，需核对已有配置。 |
+| 1 | [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) | 1592 | 86779 | 本地语音克隆、转写、配音与有声书生成工具。 | 可观望：可补充口述转写、会议音频转文字和有声文档，但语音非当前主线，且模型下载、硬件与 AGPL 需评估；先核对现有转写流程。 | Windows 有安装包或 PowerShell 安装；支持 CUDA 或 CPU；需下载模型，CPU 约 5GB 磁盘；AGPL-3.0；费用未确认。 | 可与 Codex/Claude Code 通过本地 API/MCP 集成；是否与现有转写或语音工具重叠需核对配置。 |
+| 2 | [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | 1317 | 33724 | 为 Claude Code 和 Codex 提供网页设计生成与审计技能。 | 不建议配置：主要服务于网页界面设计与反 AI 风格审计，和办公文档、工程审查、知识库及自动化主线关联弱；仅在明确做前端页面时再考虑。 | 需 Node 18+，通过 npx skills 安装；浏览器检查需 Chrome 和 puppeteer-core；MIT；Windows 原生支持未明确确认。 | 与 Codex/Claude Code 技能机制兼容；是否已有设计或前端技能需核对，补充文档与审查主线有限。 |
+| 3 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 1092 | 87676 | 为 AI 编码代理提供前端设计规范、审查命令与确定性检测。 | 可观望：主要面向前端 UI 设计与评审，与办公文档、知识库和自动化主线关联较弱；安装会涉及 hooks 和项目文档，建议先小项目试用。 | Windows 有 .cmd 入口；npx 安装需 Node，首次会下载引擎二进制；检测规则无需 API，但代理命令的模型费用取决于所用工具，硬件未确认。 | 与 Codex/Claude Code 的 skills/hooks 机制重叠，可作为前端审查补充；需核对已有配置。 |
+| 4 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 853 | 288852 | 为多种编码代理注入规划、测试、审查、记忆与安全流程。 | 可观望：覆盖工程审查与自动化，但会批量注入插件、技能和 hooks，改动面大；应先审视其流程与现有 Codex/Claude Code 配置是否冲突。 | Windows 有引导步骤；需 Node.js 18+、Git，Claude 插件需 Claude Code 2.1+；Codex 路径存在；Pro 私有仓库收费，模型与硬件要求未确认。 | 与 Codex/Claude Code 原生技能、hooks、记忆及现有自动化流程可能重叠，应先核对已有配置。 |
+| 5 | [makecindy/cindy](https://github.com/makecindy/cindy) | 675 | 4844 | 整合 Claude Code、Codex 等模型与工具执行本地任务的桌面 Agent。 | 可观望：可复用已有 Claude Code/Codex 订阅，覆盖本地文件、记忆、技能与定时任务；但后端闭源、遥测和 Windows 稳定性需先验证。 | Windows 桌面端（Electron）；开发需 Node 22、pnpm 10、Git LFS；云账号/模型费用、硬件及 WSL/Docker 支持未确认。 | 与 Claude Code、Codex、Pi Agent 的代理编排重叠，补充统一桌面入口、记忆与定时任务；需核对现有配置。 |
+| 6 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 675 | 41584 | 聚合多家免费 LLM 与自定义端点，提供统一 OpenAI 兼容 API。 | 可观望：可统一多模型接入与故障转移，适合实验；但依赖免费额度与第三方条款，定位个人实验，不宜承载关键文档与审查流程。 | Windows 可用 .exe 或 Docker；需各供应商账号/API Key；实时目录为付费项；硬件与免费额度稳定性未确认。 | 与 DeepSeek、Codex、Claude Code 的模型接入有重叠，可补充统一路由与备用端点；需核对现有网关。 |
+| 7 | [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 658 | 108382 | Google 开源的终端 Gemini AI 代理，支持脚本与 MCP。 | 可观望：官方提示免费及 Google One 用户已迁移至 Antigravity，且未针对最新 Gemini 优化；除非需 Gemini API/Vertex 或脚本化，新增价值有限。 | Node.js/npm；需 Google 账号、Gemini API Key 或 Vertex AI；Windows 原生兼容未确认，API 可能计费。 | 与 Codex、Claude Code 的终端代理/MCP 自动化重叠，需核对已有配置；可作为 Gemini 模型补充。 |
+| 8 | [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) | 600 | 19862 | 面向自主 AI 代理的内核级隔离与策略运行时。 | 可观望：可为自动化代理隔离文件、网络和凭据，适合工程审查/知识库流程的安全执行；但 Windows 仅 WSL2 实验支持，部署维护成本高。 | 需 Linux/macOS 或 Windows WSL2（实验性），以及 Docker/Podman 或主机虚拟化；硬件与模型 API 费用未确认。 | 不替代 Codex/Claude Code，可作为其自动化执行的隔离层；需核对现有沙箱与权限方案。 |
+| 9 | [obra/superpowers](https://github.com/obra/superpowers) | 451 | 305042 | 面向编码代理的开发方法论与可组合技能框架，强调先设计后实现。 | 可观望：支持 Codex、Claude Code 与 Pi，可规范开发流程；但核心是编码方法论，对办公文档和知识库的直接帮助有限，建议先小范围试用。 | 经各代理插件市场或 git 安装；Windows 原生兼容性未确认；无特殊硬件要求；模型调用费用取决于所用代理与 API。 | 与现有 Codex、Claude Code、Pi 的代理工作流重叠，技能/插件配置需核对；对工程审查仅为流程补充。 |
+| 10 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | 381 | 114585 | 多智能体 LLM 金融交易分析与模拟框架，含基本面、情绪、风险角色。 | 不建议配置：聚焦金融交易研究，与办公文档、工程审查、知识库和通用自动化关注点不匹配，且需金融数据与模型 API 成本。 | 需 Python 3.11+ 或 Docker；配置一种或多种 LLM API 及金融数据源密钥，部分收费；硬件与 Windows 兼容性未确认。 | 与现有工具链重叠很少，仅多智能体编排思路可参考；需核对是否已有自动化代理框架。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
-- [NVIDIA/OpenShell README](https://github.com/NVIDIA/OpenShell#readme)；最近推送 2026-10-24T23:55:12Z；许可证 Apache-2.0
-- [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-10-18T01:55:14Z；许可证 MIT
-- [heygen-com/hyperframes README](https://github.com/heygen-com/hyperframes#readme)；最近推送 2026-10-25T00:01:39Z；许可证 Apache-2.0
-- [tashfeenahmed/freellmapi README](https://github.com/tashfeenahmed/freellmapi#readme)；最近推送 2026-10-24T16:48:03Z；许可证 MIT
-- [SnailSploit/Claude-Red README](https://github.com/SnailSploit/Claude-Red#readme)；最近推送 2026-10-12T15:02:40Z；许可证 MIT
-- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-10-24T06:29:27Z；许可证 Apache-2.0
-- [anthropics/knowledge-work-plugins README](https://github.com/anthropics/knowledge-work-plugins#readme)；最近推送 2026-10-24T07:31:47Z；许可证 Apache-2.0
-- [makecindy/cindy README](https://github.com/makecindy/cindy#readme)；最近推送 2026-10-25T00:14:02Z；许可证 Apache-2.0
+- [debpalash/VoiceStudio README](https://github.com/debpalash/VoiceStudio#readme)；最近推送 2026-10-26T00:13:01Z；许可证 AGPL-3.0
 - [Nutlope/hallmark README](https://github.com/Nutlope/hallmark#readme)；最近推送 2026-10-22T17:20:32Z；许可证 MIT
-- [tt-a1i/archify README](https://github.com/tt-a1i/archify#readme)；最近推送 2026-10-24T14:25:59Z；许可证 MIT
+- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-10-25T18:04:24Z；许可证 Apache-2.0
+- [affaan-m/ECC README](https://github.com/affaan-m/ECC#readme)；最近推送 2026-10-25T23:16:34Z；许可证 MIT
+- [makecindy/cindy README](https://github.com/makecindy/cindy#readme)；最近推送 2026-10-25T20:26:51Z；许可证 Apache-2.0
+- [tashfeenahmed/freellmapi README](https://github.com/tashfeenahmed/freellmapi#readme)；最近推送 2026-10-25T16:29:10Z；许可证 MIT
+- [google-gemini/gemini-cli README](https://github.com/google-gemini/gemini-cli#readme)；最近推送 2026-10-25T01:31:54Z；许可证 Apache-2.0
+- [NVIDIA/OpenShell README](https://github.com/NVIDIA/OpenShell#readme)；最近推送 2026-10-25T22:33:30Z；许可证 Apache-2.0
+- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-10-23T03:48:57Z；许可证 MIT
+- [TauricResearch/TradingAgents README](https://github.com/TauricResearch/TradingAgents#readme)；最近推送 2026-10-16T21:38:46Z；许可证 Apache-2.0
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
