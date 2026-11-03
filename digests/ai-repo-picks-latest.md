@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-02
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-03
 
-采集时间：2026-11-02T01:30:46.404Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-11-03T03:29:14.830Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [ifixai-ai/iFixAi](https://github.com/ifixai-ai/iFixAi) | 1584 | 42509 | 审计 AI 代理行为的 Python 命令行工具，模拟业务场景并对代理回复评分。 | 可观望：可与 Codex、Claude Code 插件集成，补充代理行为审查；但核心是合规与对齐审计，真实运行需接入代理并消耗评审模型 API 费用。 | Python 3.10+，Windows 原生可运行；演示模式免密钥，真实审计需 OpenAI、Anthropic 等评审模型 API，费用与硬件未确认。 | 与现有编码代理互补，侧重代理输出审计而非代码审查；需核对是否已有评测流程。 |
-| 2 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | 1526 | 109329 | 为编码代理提供跨会话持久记忆，自动压缩并回注相关上下文。 | 值得配置：覆盖 Claude Code、Codex、Pi、DeepSeek 等在用工具，利于知识库与长任务连续性；默认引导托管记忆，需确认数据存放与计费。 | Node.js 20+，安装器自动装 Bun、uv；Windows 原生支持但需配置 PATH；默认托管服务需登录，可改用自备 OpenRouter 或 Gemini 密钥，费用未确认。 | 补充现有代理的会话记忆，与知识库、RAG 可能重叠，需核对已有记忆方案。 |
-| 3 | [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | 1191 | 40274 | AI工程教程与示例合集，覆盖RAG、Agent、OCR等。 | 可观望：适合查阅文档OCR、知识库RAG和Agent样例，但不是现成工作流；需按项目配置依赖与模型，学习成本不低。 | 需Python/Jupyter及各项目依赖；模型和API因项目而异，Windows兼容性与硬件未确认。 | 可作为现有Codex/Claude Code知识库与文档自动化的参考，非直接替代；需核对已有方案。 |
-| 4 | [Orkas-AI/Orkas](https://github.com/Orkas-AI/Orkas) | 1146 | 7324 | 本地多Agent桌面应用，编排内置专家及Codex、Claude Code等。 | 可观望：Windows原生且能调度已有Codex/Claude Code，补办公文档与定时自动化；但打包版账号/credits、开源版功能限制及权限费用需核验。 | Windows 10+原生；源码需Node 22.12+、Python及工具链；打包版需账号与500 credits，模型可自带API key，具体收费未确认。 | 与Codex、Claude Code、Pi Agent存在编排重叠，可作统一调度层；需核对已有自动化、权限与数据边界。 |
-| 5 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 1140 | 99363 | 为编码代理提供UI设计审查、反AI审美套路和确定性检测命令。 | 可观望：主要服务前端界面与UI审查，对办公文档、知识库和一般工程审查帮助有限；已支持Codex、Claude Code、DeepSeek、Pi，若有网页界面交付再评估。 | 需Node/npx或手动复制技能；检测器可本地运行，浏览器扫描调用本机Chrome/Edge；Windows兼容性未明确，API收费未确认。 | 与现有编码代理的设计/审查技能可能重叠；可补充UI审查，需核对已有配置。 |
-| 6 | [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | 967 | 32318 | 把Claude Code扩展为游戏开发多代理工作室，含代理、技能、钩子和文档模板。 | 不建议配置：面向游戏开发流程，与办公文档、知识库、工程审查和自动化目标不匹配；会引入大量游戏专用代理与文档，除非开展游戏项目。 | 依赖Claude Code、Git、Python 3、Bash；Windows经Git Bash，jq推荐；模型调用费用未确认。 | 与Claude Code的子代理/技能工作流重叠，且偏游戏领域；需核对已有配置。 |
-| 7 | [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) | 922 | 10555 | 将Claude、Codex等CLI封装为多机器人聊天式代理，支持审批和计算机操作。 | 可观望：可补充多代理分工、审批与任务编排，但项目早期且Windows本机控制据README未支持；与现有Codex/Claude Code/Pi Agent重叠多，先小范围验证。 | Windows x64安装包；CLI需Node 24；需claude/codex/grok登录或API密钥，云桌面、Composio、语音可能计费；CLI密钥明文存储；Windows本机控制据README未支持。 | 与Codex、Claude Code、Pi Agent代理执行重叠；聊天式多机器人、审批卡与计算机面板为补充，需核对配置。 |
-| 8 | [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling) | 892 | 91774 | Python网页抓取框架，支持动态页面、爬虫、代理轮换及MCP供代理调用。 | 值得配置：适合把网页和在线资料批量转为结构化数据或Markdown，接入知识库与代理自动化；不涉及办公文档审查，需先有明确采集源并评估合规。 | Python 3.10+；浏览器抓取需另装依赖并执行scrapling install；可用Docker；代理/反爬可能收费；MCP需scrapling[ai]；Windows兼容性未确认。 | 补充Codex/Claude Code/Pi Agent的网页采集与MCP工具能力；与现有浏览器自动化可能重叠，需核对配置。 |
-| 9 | [lightpanda-io/browser](https://github.com/lightpanda-io/browser) | 825 | 40160 | 轻量无头浏览器，支持CDP和网页抓取自动化 | 可观望：Windows需WSL2或Docker且仅有nightly，非原生；若已有Chrome/Playwright自动化，增量有限；可作知识库网页抓取的候选。 | 无Windows原生版，需WSL2或Docker；源码构建需Zig 0.17及依赖；agent模式需LLM API密钥或本地模型，费用取决于提供方；硬件未确认。 | 与Chrome/Playwright等浏览器自动化重叠，需核对已有配置；可补充网页转Markdown和结构化抓取。 |
-| 10 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 757 | 107807 | 为编码代理提供前端视觉设计、参考图和浏览器检查 | 不建议配置：主要提升前端页面与界面设计，和办公文档、工程审查、知识库及自动化主线关联弱；除非近期有网页/UI产出，否则收益低。 | Node 22+及Chrome/Edge/Chromium；通过npx skills或插件安装；无需API密钥；找图需联网；Windows兼容性未明确声明。 | 可接入Codex/Claude Code的技能机制，但偏前端设计；需核对已有设计类技能配置。 |
+| 1 | [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | 2275 | 10228 | 通过系统无障碍树读取并操作桌面应用的 CLI，供 AI 代理调用。 | 值得配置：Windows 原生无障碍树自动化可补足终端代理操作桌面应用的能力，适合办公文档与审查流程；但快照可能含隐私，需先小范围验证 Office 控件识别、权限隔离和稳定性。 | Windows 原生可用，npm 安装；同终端完整性级别应用无需额外授权；硬件与 Node 版本未确认；是否产生模型 API 费用未说明。 | 与 Codex/Claude Code 的终端自动化互补；桌面操作类脚本或 RPA 可能重叠，需核对已有配置。 |
+| 2 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | 1803 | 110875 | 跨 Claude Code、Codex、Pi 等会话捕获、压缩并回注上下文的记忆插件。 | 可观望：可补足多智能体会话连续性，但默认走托管记忆并需登录/订阅，且会捕获会话内容；工程审查与办公资料敏感，应先验证本地 provider、隐私排除和 Windows 稳定性。 | Node ≥20、Bun、uv、SQLite；Windows 有安装说明；默认托管服务需登录，试用后可订阅；可改用自有 OpenRouter/Gemini/Anthropic 密钥。硬件与各 IDE 版本兼容未完全确认。 | 与现有 Claude Code/Codex/Pi 的会话记忆和知识库可能重叠，需核对已有记忆/检索方案，定位为补充。 |
+| 3 | [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | 1379 | 33706 | 面向 Claude Code 的游戏开发工作室模板，含多角色代理与流程技能。 | 不建议配置：主要服务游戏开发，含引擎专用角色；与办公文档、知识库和通用工程审查匹配度低，配置维护成本偏高。 | 需 Git、Claude Code、Python 3 与 Bash；Windows 依赖 Git Bash，jq 可选；模型费用随 Claude Code，硬件未确认。 | 会与现有 Claude Code 代理/技能配置重叠，需核对；对办公与知识库自动化补充有限。 |
+| 4 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 849 | 295747 | 为 Claude Code、Codex 等代理注入技能、记忆、审查与安全流程的配置系统。 | 可观望：覆盖 Codex 与 Claude Code 的工程审查和自动化，值得评估；但体系较大、钩子行为需核对，办公文档与知识库能力未确认。 | 需 Node.js 18+、Git；Claude Code 插件需 2.1+，Windows 可用 PowerShell/npx；Pro 私有仓库收费，模型/API 费用未确认。 | 与现有 Codex/Claude Code 配置及代理技能可能重叠，需核对冲突；可补充审查与记忆流程。 |
+| 5 | [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) | 823 | 11333 | 本地多 AI bot 聊天壳，调用 Claude/Codex CLI 并配虚拟电脑与审批 | 可观望：可在 Windows 以聊天界面编排现有 Claude/Codex，带审批与虚拟电脑；但项目早期、Windows 主机控制未确认，暂不宜作为办公主链路。 | Windows x64 安装包；需本机 Claude/Codex CLI 及登录或 API Key；npm 需 Node 24；云桌面/Composio 可能另收费；Windows 主机控制未确认。 | 与 Codex、Claude Code 的会话和审批编排重叠；补充多 bot、VM、MCP；需核对 Pi Agent 现有配置。 |
+| 6 | [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | 767 | 40964 | LLM、RAG、Agent 教程与示例项目合集，非统一部署工具 | 不建议配置：本质是教程/示例合集，无统一安装部署；对知识库与工程审查仅作参考，不能替代现有工具链。 | Windows 可浏览与克隆；运行示例需 Python/Jupyter 及各项目依赖，部分需 API Key 或 GPU，未确认。 | 与知识库/RAG 学习相关，属补充资料；非运行时工具，需核对已有工具链。 |
+| 7 | [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling) | 706 | 93109 | Python网页抓取框架，支持请求、浏览器渲染、爬虫和MCP。 | 可观望：网页采集可补充知识库与自动化，但浏览器/反爬链路较重；Windows兼容性未确认，建议按需小规模验证合规与维护成本。 | Python 3.10+；浏览器抓取需安装fetchers及浏览器依赖，提供Docker镜像；Windows原生兼容性未确认；代理/验证码服务可能收费。 | 与编码助手不直接重叠，可作为MCP补网页采集；需核对已有浏览器自动化/抓取脚本。 |
+| 8 | [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) | 693 | 75396 | 面向AI编码助手的视频生产系统，覆盖脚本、素材、剪辑与合成。 | 不建议配置：主要面向视频制作，与办公文档、工程审查、知识库和日常自动化关联弱；依赖多类云API与渲染链，投入产出不匹配。 | Python 3.10+、Node.js 18+、FFmpeg；GPU可选；云视频/图像/语音API收费；Windows兼容性未确认；AGPL-3.0需评估。 | 可与Codex/Claude Code集成，但属视频创作；需核对已有媒体/渲染工具，与办公审查无直接重叠。 |
+| 9 | [beenuar/AiSOC](https://github.com/beenuar/AiSOC) | 659 | 6730 | 自托管安全运营中心，聚合告警并用可审计 AI 代理分诊调查。 | 不建议配置：与办公文档、工程审查、知识库自动化的直接交集有限；除非已有安全告警源，否则部署和运维成本偏高。 | Docker Compose v2；Docker VM 需 8GB 内存、20GB 磁盘；另需 python3、bash；Windows 提供 PowerShell 安装脚本；API 收费未确认。 | 与 Claude Code 的 MCP 可对接，但面向安全分诊；与办公/知识库工具重叠低，需核对现有 MCP 配置。 |
+| 10 | [FlashML-org/FreeToken](https://github.com/FlashML-org/FreeToken) | 653 | 16160 | 面向消费硬件的 MoE 本地推理引擎，提供兼容 API 与桌面端。 | 可观望：可为 Codex、Claude Code 等提供本地兼容端点；但大 MoE 对显存和内存要求高且未列明，需先按现有硬件评估。 | Windows 桌面版；需 NVIDIA RTX 30/40/50 系列；大模型所需显存/内存未明确；模型权重许可与 API 收费未确认。 | 与 DeepSeek/云端 API 互补，可作本地模型后端；不替代文档、知识库和自动化编排，需核对现有 API 配置。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
-- [ifixai-ai/iFixAi README](https://github.com/ifixai-ai/iFixAi#readme)；最近推送 2026-10-30T18:50:42Z；许可证 Apache-2.0
-- [thedotmack/claude-mem README](https://github.com/thedotmack/claude-mem#readme)；最近推送 2026-11-01T21:01:59Z；许可证 Apache-2.0
-- [patchy631/ai-engineering-hub README](https://github.com/patchy631/ai-engineering-hub#readme)；最近推送 2026-11-01T04:39:16Z；许可证 MIT
-- [Orkas-AI/Orkas README](https://github.com/Orkas-AI/Orkas#readme)；最近推送 2026-11-02T01:24:30Z；许可证 MIT
-- [pbakaus/impeccable README](https://github.com/pbakaus/impeccable#readme)；最近推送 2026-11-01T18:04:59Z；许可证 Apache-2.0
+- [vercel-labs/agent-desktop README](https://github.com/vercel-labs/agent-desktop#readme)；最近推送 2026-11-03T02:40:27Z；许可证 Apache-2.0
+- [thedotmack/claude-mem README](https://github.com/thedotmack/claude-mem#readme)；最近推送 2026-11-03T01:49:06Z；许可证 Apache-2.0
 - [Donchitos/Claude-Code-Game-Studios README](https://github.com/Donchitos/Claude-Code-Game-Studios#readme)；最近推送 2026-10-19T02:43:42Z；许可证 MIT
-- [milind-soni/OpenMausBot README](https://github.com/milind-soni/OpenMausBot#readme)；最近推送 2026-11-01T19:48:30Z；许可证 Apache-2.0
-- [D4Vinci/Scrapling README](https://github.com/D4Vinci/Scrapling#readme)；最近推送 2026-11-01T18:00:03Z；许可证 BSD-3-Clause
-- [lightpanda-io/browser README](https://github.com/lightpanda-io/browser#readme)；最近推送 2026-11-02T01:06:21Z；许可证 AGPL-3.0
-- [Leonxlnx/taste-skill README](https://github.com/Leonxlnx/taste-skill#readme)；最近推送 2026-10-31T07:59:58Z；许可证 MIT
+- [affaan-m/ECC README](https://github.com/affaan-m/ECC#readme)；最近推送 2026-11-02T04:56:08Z；许可证 MIT
+- [milind-soni/OpenMausBot README](https://github.com/milind-soni/OpenMausBot#readme)；最近推送 2026-11-03T02:40:48Z；许可证 Apache-2.0
+- [patchy631/ai-engineering-hub README](https://github.com/patchy631/ai-engineering-hub#readme)；最近推送 2026-11-01T04:39:16Z；许可证 MIT
+- [D4Vinci/Scrapling README](https://github.com/D4Vinci/Scrapling#readme)；最近推送 2026-11-02T20:16:23Z；许可证 BSD-3-Clause
+- [calesthio/OpenMontage README](https://github.com/calesthio/OpenMontage#readme)；最近推送 2026-10-28T21:46:02Z；许可证 AGPL-3.0
+- [beenuar/AiSOC README](https://github.com/beenuar/AiSOC#readme)；最近推送 2026-11-03T03:21:26Z；许可证 MIT
+- [FlashML-org/FreeToken README](https://github.com/FlashML-org/FreeToken#readme)；最近推送 2026-11-02T23:05:18Z；许可证 Apache-2.0
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
