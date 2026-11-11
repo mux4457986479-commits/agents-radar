@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-10
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-11
 
-采集时间：2026-11-10T04:06:42.316Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-11-11T01:55:33.070Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) | 1587 | 19916 | 本地多代理聊天壳，调度 Claude/Codex CLI，带审批与虚拟机。 | 可观望：多代理编排、审批和电脑操作可补自动化，但项目早期、配置与权限面较重，且核心能力与现有 CLI 重叠，先评估成本与安全。 | Windows x64 安装包或 Node 24；需 Claude/Codex/Grok 登录或 API Key；可能产生模型/云桌面费用；密钥明文存储，硬件未确认。 | 与 Codex/Claude Code 的编码代理重叠，补充多代理调度、审批和电脑操作；需核对已有编排。 |
-| 2 | [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) | 1262 | 106317 | 本地语音克隆、配音、转写与有声书制作工具，支持多语言。 | 可观望：语音克隆/配音偏离办公审查与知识库主线；本地转写或可辅助文档口述，但模型重、AGPL 与 GPU 成本需先评估。 | Windows 10/11 x64；支持 NVIDIA CUDA、AMD ROCm 或 CPU；需下载模型，磁盘/显存未确认；AGPL-3.0。 | 与现有文本 CLI 无直接重叠；转写/口述可补充办公文档，需核对已有语音转写工具。 |
-| 3 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | 916 | 48613 | 面向 AI 代理的浏览器自动化 CLI，用快照定位并操作网页。 | 值得配置：与 Codex、Claude Code、Pi Agent 的命令行工作流契合，可补网页检索、表单填写和流程自动化；但应先核对现有浏览器自动化配置。 | Windows x64 原生二进制；需 Node/npm 安装；首次下载 Chrome for Testing；本地使用未见 API 收费说明，云浏览器另计；企业代理兼容性未确认。 | 与现有代理的网页操作或 MCP 工具可能重叠，需核对；主要补充 CLI 自动化与可复用会话。 |
-| 4 | [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) | 710 | 57681 | 个性化学习辅导应用，集成 RAG 知识库、问答、练习与多代理。 | 可观望：偏教学与学习路径，不是办公文档或工程审查专用；其文档解析和知识库可参考，但需评估维护与数据迁移成本。 | 提供 Windows x64 桌面预览（未签名，可能触发 SmartScreen）；也支持 Docker 和 PyPI；Python 3.11–3.14、Node 20.9+；模型 API 费用与硬件要求未确认。 | 与知识库、RAG 类工具重叠，需核对已有配置；对办公文档和工程审查的增益有限。 |
-| 5 | [obra/superpowers](https://github.com/obra/superpowers) | 583 | 315235 | 面向编码代理的技能框架与软件开发流程插件 | 值得配置：Codex、Claude Code、Pi 均有安装入口，可规范需求澄清、计划与子代理审查；对文档和知识库帮助有限，需核对现有技能。 | 依赖各代理的插件或 Hook 与 Shell；Windows 原生支持未确认；使用会消耗模型 API 额度，额外收费未确认。 | 与 Codex、Claude Code、Pi 自带技能和流程可能重叠；需核对已有插件、Hook 与自定义指令。 |
-| 6 | [anthropics/claude-quickstarts](https://github.com/anthropics/claude-quickstarts) | 551 | 20104 | Claude API 应用示例合集，含客服、知识库与自动化样例 | 可观望：含知识库问答、财务分析和 MCP 示例，可作原型参考；但非成品工具，需开发改造，不宜当现成方案配置。 | 需 Claude API Key（按量计费）、Python/Node；部分示例需 Docker，macOS 示例需虚拟机；Windows 原生支持未确认。 | 与 Claude Code 及现有知识库、自动化项目互补；示例功能可能重叠，需核对已有配置。 |
-| 7 | [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis) | 506 | 69085 | 用LLM聚合多市场行情与新闻，生成股票分析报告并定时推送。 | 不建议配置：面向证券投资分析，与办公文档、工程审查和知识库主线弱相关；仅定时推送与报告自动化可借鉴，需额外模型及数据源配置。 | 可GitHub Actions、Docker或Python 3.10+运行；需LLM API密钥，搜索/行情源可选；Windows原生支持未确认，费用与硬件未确认。 | 与DeepSeek/Claude仅共享模型调用；需核对已有自动化、推送与数据处理配置。 |
-| 8 | [jub0t/Concat](https://github.com/jub0t/Concat) | 493 | 16255 | 本地开源视频编辑器，支持字幕、配音、抠像及MCP/JSON-RPC脚本控制。 | 可观望：视频剪辑不在当前办公、工程审查主线；MCP接口可供Agent自动化试验，但Beta且Windows构建未签名，暂不宜生产依赖。 | Windows x86_64安装包；Beta且构建未签名；本地模型需下载，硬件未确认；源码构建需Rust与FFmpeg 7+。 | 可通过MCP为Codex/Claude Code补充视频自动化；需核对已有媒体处理工具。 |
-| 9 | [storytold/artcraft](https://github.com/storytold/artcraft) | 378 | 40306 | 面向图像和视频创作的 AI 可视化编辑与合成工具 | 不建议配置：与办公文档、工程审查、知识库和自动化主线不匹配，图像视频创作除非有配图或素材生成需求，否则无需配置。 | 提供 Windows 稳定版下载；是否需本地 GPU、模型 API 费用和账号限制未确认；从源码构建另有依赖。 | 与 Codex、Claude Code、DeepSeek、Pi Agent 的文档/代码自动化无直接重叠；仅可能补图像素材，需核对已有配置。 |
-| 10 | [dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke) | 333 | 1053 | 在自有 GPU 裸金属上管理 Kubernetes 集群的 NVIDIA 预览版平台 | 不建议配置：面向 GPU 集群与 Kubernetes 平台运维，和文档处理、工程审查、知识库及日常自动化无直接关系，且预览版不宜生产。 | 评估需 Linux 主机/虚拟机、Docker、6 CPU/12 GiB 内存/100 GiB 磁盘；真实安装需 NVIDIA GPU 机器和 NICo；Windows 原生/WSL 兼容未确认。 | 与现有编码/文档代理几乎无重叠；仅在已有本地 GPU 推理或 K8s 平台时可能补充，需核对已有配置。 |
+| 1 | [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) | 1207 | 107321 | 本地多语种语音克隆、配音、听写与转录工作台。 | 可观望：可补充会议录音转写、文档朗读和视频配音，但语音不是办公审查与知识库主线，模型和硬件成本需先评估。 | Windows 10/11 x64 原生安装；CPU可用，GPU可选CUDA/ROCm；需下载本地模型；Docker可选；AGPL-3.0；Pro/云服务与API收费未确认。 | 可能与现有转写、语音合成或会议记录工具重叠；对Codex、Claude Code、DeepSeek、Pi Agent无直接替代。 |
+| 2 | [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) | 1096 | 20671 | 将Claude、Codex等CLI聚合成多机器人聊天式代理工作台。 | 可观望：可统一调度多个代理并加审批、计算机操作和连接器，但项目早期且配置、凭据与安全面较复杂，先核对是否确需额外编排层。 | Windows x64安装包或Node 24；需已装Claude/Codex CLI或API密钥；可选Docker/VM及Composio、Boat等第三方服务，部分收费；安全细节与费用未完全确认。 | 与Codex、Claude Code、Pi Agent执行层重叠，补充多机器人聊天编排、审批和计算机控制；需核对现有工作流。 |
+| 3 | [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis) | 960 | 69574 | 多市场股票行情分析与自动推送系统 | 可观望：与办公文档、工程审查和知识库主线关联弱；还需维护行情源、模型与推送密钥，免费源稳定性无保证，除非确有股票分析需求。 | Python 3.10+，可选Docker或GitHub Actions；LLM/搜索API多需付费，免费行情源稳定性不保证；Windows原生兼容未明确。 | 需核对已有自动化配置；仅补充股市分析与推送，和文档、审查、知识库工具基本不重叠。 |
+| 4 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 835 | 188427 | 约束代码代理精简实现并提供审查/审计命令 | 值得配置：直接服务Codex/Claude Code的工程审查，可减少过度生成并补审查、审计流程；应先在小仓库验证hooks与规则效果。 | 支持Claude Code/Codex插件，或其他代理复制AGENTS.md/SKILL.md；npm分发，可能需Node；Windows兼容与hooks行为未确认；无额外模型费。 | 需核对已有AGENTS/提示词与审查流程；补充代码审查和精简约束，可能与现有工程规范重叠。 |
+| 5 | [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 790 | 6696 | 通过 MCP 让 AI 配置和自动化 Home Assistant | 可观望：仅对已部署 Home Assistant 的用户有直接价值；用户核心场景是办公文档、工程审查、知识库和通用自动化，智能家居并非重点，且需管理员令牌与网络访问配置，先确认是否实际使用 HA。 | 需 Home Assistant 2026.8+，可经 HACS/市场、加载项、Docker 或 uvx 部署；AI 客户端可在 Windows 连接；AI 服务费用另计未确认。 | 与通用自动化代理可能互补；若已有 Home Assistant 集成或智能家居 MCP，需核对避免重复配置。 |
+| 6 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | 780 | 49251 | 供 AI 代理通过 CLI 驱动浏览器的自动化工具 | 可观望：Windows 原生支持且提供 CLI/MCP，适合网页资料采集与流程自动化，可补充知识库和代理工作流；但非办公文档或工程审查核心，且可能与现有代理浏览能力重叠，先核对再装。 | Windows x64 原生二进制；需 Node/npm 安装并首次下载 Chrome for Testing；本地使用无 API 费，云端浏览器或外部服务收费未确认。 | 与 Codex、Claude Code 的网页浏览/自动化及现有 RPA 可能重叠，需核对已有配置。 |
+| 7 | [obra/superpowers](https://github.com/obra/superpowers) | 656 | 315777 | 面向编码代理的技能框架与软件开发流程插件 | 值得配置：已支持 Claude Code、Codex 与 Pi，可把需求澄清、计划、TDD 和子代理审查用于工程审查与自动化；建议先小范围验证流程是否贴合现有规范。 | 以插件或包安装到各代理，不需额外模型或硬件；Windows 原生兼容性说明不足，需实测；代理自身 API 费用未确认。 | 与现有 Codex、Claude Code、Pi 工作流及自建技能可能重叠，需核对已有配置后选用。 |
+| 8 | [ruvnet/RuView](https://github.com/ruvnet/RuView) | 627 | 103914 | 用 WiFi CSI 感知人体存在、生命体征与姿态的平台 | 不建议配置：主要面向智能家居与空间感知，依赖 ESP32/CSI 硬件；与办公文档、工程审查和知识库无直接关系，当前场景投入产出偏低。 | 真实感知需 ESP32 CSI 节点或雷达；也提供 Docker 模拟与 Python 包；Windows 支持有声明但硬件适配未确认，API 费用未确认。 | 可能补充家庭自动化；与现有办公、工程代理工具重叠较少，若已有智能家居平台需核对。 |
+| 9 | [anthropics/claude-quickstarts](https://github.com/anthropics/claude-quickstarts) | 531 | 20522 | Claude API 应用示例集合，覆盖客服、知识库、浏览器与编码代理。 | 可观望：适合借鉴知识库与浏览器自动化示例，但多为参考实现，需自行改造并承担 Claude API 费用，非办公文档直接工具。 | Claude API Key 与按量计费；部分示例用 Python/TypeScript，电脑操作示例可能需 Docker/VNC；Windows 原生兼容与硬件要求未逐一确认。 | 与 Claude Code、现有知识库及自动化脚本可能重叠；需核对已配置的 MCP、浏览器工具。 |
+| 10 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 465 | 115203 | 面向 AI 编码代理的工程技能与工作流集合。 | 值得配置：直接适配 Codex/Claude Code，补充规格、测试与代码审查流程；但偏软件工程，不覆盖办公文档/知识库，建议按需选取。 | Node/npx 或对应代理插件机制，需 Git；Windows 安装有 SSH 转 HTTPS 提示；无独立模型费用，代理调用费用未确认。 | 与 Claude Code/Codex 自带工作流及已有提示词、插件可能重叠；需核对现有配置，补充审查与测试规范。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
-- [milind-soni/OpenMausBot README](https://github.com/milind-soni/OpenMausBot#readme)；最近推送 2026-11-10T03:59:16Z；许可证 Apache-2.0
-- [debpalash/VoiceStudio README](https://github.com/debpalash/VoiceStudio#readme)；最近推送 2026-11-10T03:42:58Z；许可证 AGPL-3.0
-- [vercel-labs/agent-browser README](https://github.com/vercel-labs/agent-browser#readme)；最近推送 2026-11-10T01:45:24Z；许可证 Apache-2.0
-- [HKUDS/DeepTutor README](https://github.com/HKUDS/DeepTutor#readme)；最近推送 2026-11-07T15:18:10Z；许可证 Apache-2.0
+- [debpalash/VoiceStudio README](https://github.com/debpalash/VoiceStudio#readme)；最近推送 2026-11-10T23:53:08Z；许可证 AGPL-3.0
+- [milind-soni/OpenMausBot README](https://github.com/milind-soni/OpenMausBot#readme)；最近推送 2026-11-11T01:54:30Z；许可证 Apache-2.0
+- [ZhuLinsen/daily_stock_analysis README](https://github.com/ZhuLinsen/daily_stock_analysis#readme)；最近推送 2026-11-10T11:51:09Z；许可证 MIT
+- [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-10-29T11:59:31Z；许可证 MIT
+- [homeassistant-ai/ha-mcp README](https://github.com/homeassistant-ai/ha-mcp#readme)；最近推送 2026-11-11T00:27:16Z；许可证 MIT
+- [vercel-labs/agent-browser README](https://github.com/vercel-labs/agent-browser#readme)；最近推送 2026-11-11T00:34:33Z；许可证 Apache-2.0
 - [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-11-03T23:24:58Z；许可证 MIT
+- [ruvnet/RuView README](https://github.com/ruvnet/RuView#readme)；最近推送 2026-11-11T00:24:53Z；许可证 MIT
 - [anthropics/claude-quickstarts README](https://github.com/anthropics/claude-quickstarts#readme)；最近推送 2026-11-06T19:37:57Z；许可证 MIT
-- [ZhuLinsen/daily_stock_analysis README](https://github.com/ZhuLinsen/daily_stock_analysis#readme)；最近推送 2026-11-09T14:14:52Z；许可证 MIT
-- [jub0t/Concat README](https://github.com/jub0t/Concat#readme)；最近推送 2026-11-10T02:33:47Z；许可证 AGPL-3.0
-- [storytold/artcraft README](https://github.com/storytold/artcraft#readme)；最近推送 2026-11-09T15:09:13Z；许可证 Apache-2.0
-- [dsx-ai-factory/nvke README](https://github.com/dsx-ai-factory/nvke#readme)；最近推送 2026-11-10T02:54:46Z；许可证 Apache-2.0
+- [addyosmani/agent-skills README](https://github.com/addyosmani/agent-skills#readme)；最近推送 2026-11-01T19:24:49Z；许可证 MIT
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
