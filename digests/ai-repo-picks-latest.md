@@ -1,34 +1,34 @@
-# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-24
+# 值得配置吗？AI 仓库每日 Top 10 · 2026-11-25
 
-采集时间：2026-11-24T05:59:28.450Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
+采集时间：2026-11-25T04:54:02.262Z。每日综合榜及 9 个语言榜采样，AI 相关性依据仓库介绍及 topics；去重后按今日新增 Stars 降序取前十。
 排序依据为 GitHub Trending 报告的今日新增 Stars；不是总 Stars，也不是全 GitHub 的穷尽排名。建议是基于 README 的初评，未经本机安装验证。
 
 | 排名 | 仓库 | 今日新增 Stars | 总 Stars | 功能简介 | 是否值得配置 | Windows / 成本与前置条件 | 与现有工具的关系 |
 | ---: | :--- | ---: | ---: | :--- | :--- | :--- | :--- |
-| 1 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) | 2029 | 20116 | 面向漏洞赏金与外部红队的 Claude Code 技能包 | 不建议配置：聚焦外部攻击面与红队流程，非办公文档、工程审查主场景；需授权范围和安全经验，误用与维护成本高。 | Windows 有 PowerShell 安装脚本；支持 Claude Code 插件或复制安装，Codex 可走 Agent Skills；Python/pipx 可选；Burp/HackerOne 可选；API 收费与硬件未确认。 | 与 Claude Code/Codex 的技能机制重叠，补充攻防知识；需核对现有安全审查流程。 |
-| 2 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 924 | 208127 | 把网页抓取为 Markdown，并提供爬取、搜索与 MCP 接口 | 值得配置：可为知识库和自动化补充网页采集、清洗与 MCP 接入；应评估本地/云模式、许可合规及与现有抓取链重复。 | 本地模式需 Rust/C 编译器，MCP 需 Node.js 22+；Windows 原生支持未明确，可 Docker 自托管；云服务额度/限流/收费细节未确认；AGPL-3.0。 | 补充知识库网页采集与自动化输入；可能与现有搜索、爬虫或 MCP 工具重叠，需核对。 |
-| 3 | [zhouxiaoka/autoclip](https://github.com/zhouxiaoka/autoclip) | 907 | 14677 | 将播客访谈等长视频自动剪成短视频并生成字幕封面文案 | 可观望：与办公文档、工程审查和知识库场景关联弱；若没有长视频转短视频需求，配置和云端模型费用不划算。 | Windows 10/11 x64 桌面版，自带 Python/FFmpeg；也可 Docker/CLI。云端模型按量计费；本地分析需 Ollama/LM Studio 和硬件，配置未确认；未签名安装包可能触发 SmartScreen。 | 与现有 Agent 工具无直接重叠；其 MCP/CLI 可补充视频自动化，需核对是否已有视频流程。 |
-| 4 | [obra/superpowers](https://github.com/obra/superpowers) | 840 | 325277 | 为编码 Agent 提供可组合技能与结构化开发流程 | 值得配置：直接覆盖 Codex、Claude Code、Pi，提供需求澄清、计划、TDD 和子代理审查流程，适合工程审查与自动化；会改变默认行为，建议先单工具试用。 | 需按 Claude Code、Codex、Pi 分别安装插件；沿用现有模型和 API 费用；无额外硬件要求；Windows 兼容性 README 未明确，需实测。 | 与现有 Agent 的 skills、规则和子代理能力可能重叠；补充需求澄清、TDD、审查编排，需核对已有配置。 |
-| 5 | [jingyaogong/minimind](https://github.com/jingyaogong/minimind) | 828 | 69666 | 从零训练64M小语言模型的教学型全流程项目 | 不建议配置：核心是教学与复现训练链路，不是办公文档、工程审查或知识库的即用组件；小模型能力有限，需GPU与调参投入。 | 需Python≥3.10与PyTorch/CUDA；训练依赖NVIDIA GPU，README示例用RTX 3090；Windows原生兼容未确认，可能需WSL；软件免费，GPU租用另计。 | 与Codex/Claude Code/DeepSeek的现成推理和Agent能力重叠少；若做自定义微调需核对已有训练环境。 |
-| 6 | [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) | 797 | 73602 | 跨社交与网络源检索近30天信息并生成摘要的Agent技能 | 可观望：可作为知识库与调研的外部信号补充，但依赖多平台密钥/登录态，且与办公文档和工程审查非直接相关；建议先小范围试用。 | 通过Claude Code插件或npx skills安装，需Node/npm；部分源免费，X、ScrapeCreators、Brave等需API密钥或付费；Claude Desktop Windows支持未确认，Python 3.12+要求见文档。 | 与现有Agent的研究/自动化能力可能重叠；作为外部舆情与人物公司调研补充，需核对Codex/Claude Code已有技能配置。 |
-| 7 | [mjmirza/app-store-compliance](https://github.com/mjmirza/app-store-compliance) | 761 | 5156 | 扫描 iOS/Android 项目并提示应用商店上架合规风险 | 不建议配置：用户关注办公文档、工程审查、知识库与自动化，未体现移动应用发布需求；该工具主要服务 App Store/Google Play 提审，场景偏离。 | 需 git 与 bash；Windows 原生兼容性未确认，可能需 WSL/Git Bash；安装脚本会写入 AI 工具钩子；无硬件与 API 收费证据。 | 与 Codex/Claude Code 的审查技能可组合，但需核对是否已有移动应用合规流程；否则无直接补充。 |
-| 8 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 664 | 309701 | 为编码代理提供技能、记忆、安全审查和流程编排 | 可观望：与用户使用的 Claude Code、Codex 和自动化方向相关，但系统较重且会改钩子/插件；应先小范围验证对文档审查与知识库流程的实际增益。 | Node.js 18+、Git；Claude Code 插件需 2.1+；README 给出 Windows PowerShell 路径；Codex 支持需核对版本；Pro 私有仓库收费，开源版免费。 | 与 Claude Code/Codex 原生技能、钩子和记忆机制重叠，需核对现有配置；对 Pi Agent/DeepSeek 无明确集成证据。 |
-| 9 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 663 | 197630 | 通过提示词技能约束 AI 代理少写代码，并提供代码审查与仓库审计命令。 | 可观望：安装轻量，审查命令贴合工程审查；但效果依赖模型，README 中的成本与质量数据为自测宣传，宜先小范围验证。 | 需已安装 Claude Code、Codex 或其他 Agent Skills 宿主；MIT 许可；无独立模型或密钥；Codex 需信任其生命周期钩子；Windows 兼容性未明确说明。 | 与 Codex/Claude Code 自带代码生成和审查重叠，属提示词层补充；需核对已有 AGENTS.md、技能和钩子配置。 |
-| 10 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | 620 | 71158 | 让代理生成自包含 HTML+SVG 的编辑风格图表，支持多种图表类型与品牌配色。 | 值得配置：产出可直接打开的 HTML/SVG 图，适合办公文档配图与工程审查示意图；支持 Codex、Claude Code 和 Pi，与现有代理工作流衔接成本低。 | 需 Node/npx 或对应插件市场；生成单文件 HTML+SVG；Windows 无开发者模式时符号链接会退化为复制；是否产生额外 API 费用未确认。 | 补充办公文档配图与架构示意图；与已有绘图、文档生成工具是否重叠需核对现有配置。 |
+| 1 | [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) | 1826 | 21715 | 面向漏洞赏金和外部红队的 Claude Code 攻击技能包 | 不建议配置：集中在渗透测试、漏洞挖掘与攻击面侦察，与办公文档、工程审查和知识库主线不匹配；高权限攻击流程还增加合规与误用风险。 | Windows 可用 PowerShell 安装；需 Claude Code 或兼容技能目录，Burp/HackerOne MCP 可选；API 费用与硬件未确认。 | 与现有 Codex/Claude Code 技能机制可并存，但主要补充安全测试；需核对已有安全工具与授权流程。 |
+| 2 | [obra/superpowers](https://github.com/obra/superpowers) | 1003 | 325949 | 为编码代理提供需求澄清、计划、TDD 和子代理开发的技能框架 | 值得配置：直接支持 Claude Code、Codex 与 Pi，可把工程审查和自动化任务纳入规格、计划、测试流程；但偏软件开发，办公文档与知识库收益有限。 | 通过各代理插件市场或命令行安装；Windows 原生兼容性未明确说明；需现有模型 API，费用随代理与模型而定，硬件未确认。 | 与 Claude Code/Codex/Pi 的技能和子代理能力重叠，补充结构化开发流程；需核对已有技能配置，避免重复。 |
+| 3 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 991 | 209108 | 抓取和爬取网站并转为 Markdown，供智能体与知识库使用。 | 值得配置：可为 Codex、Claude Code 等提供网页抓取、站点爬取和 MCP 接入，贴合知识库采集与自动化；先核对 Windows 本地构建及现有网页工具。 | 本地版需 Rust、C 编译器和 Chrome/Chromium；MCP 需 Node.js 22+；云端搜索/高级功能需账号或额度，收费未确认；Windows 兼容未确认。 | 与现有智能体的网页搜索/抓取可能重叠；补充批量站点转 Markdown 和 MCP 接入，需核对已有配置。 |
+| 4 | [zhouxiaoka/autoclip](https://github.com/zhouxiaoka/autoclip) | 980 | 15557 | 将长视频自动剪成短视频，生成字幕、封面和发布文案。 | 不建议配置：与办公文档、工程审查、知识库和自动化主线关联弱，当前需求未体现视频剪辑，投入产出比低。 | Windows 10/11 x64 可用安装包；剪辑渲染本地运行，云分析/转写需自备 API，Ollama/Whisper 可离线；GPU 要求未确认。 | 与现有文档、审查、知识库工具基本无重叠；仅在视频内容再加工时补充，需核对已有配置。 |
+| 5 | [mjmirza/app-store-compliance](https://github.com/mjmirza/app-store-compliance) | 928 | 5964 | 面向 iOS/Android 提交前合规扫描与拒审案例库。 | 可观望：与工程审查有潜在关联，但当前关注点未显示移动应用发布需求；需 git/bash，Windows 原生支持未确认。 | 需 git 和 bash；部分 AI 代理集成需 python3；Windows 原生兼容性未确认，可能需 WSL 或 Git Bash；API 收费未确认。 | 与 Codex/Claude Code 的钩子和技能机制重叠；对移动合规审查是补充，需核对已有配置。 |
+| 6 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | 802 | 72238 | 为 AI 代理生成自包含 HTML/SVG 专业图表。 | 值得配置：可将架构、流程和汇报内容转为图表，补充办公文档与工程审查；原生支持 Codex、Claude Code 与 Pi。 | 通过 npx skills 或各代理插件市场安装；Windows 无开发者模式时符号链接会退回复制；硬件与 API 收费未确认。 | 与现有 Codex、Claude Code、Pi 的技能/插件机制重叠；在文档配图和知识库可视化上补充。 |
+| 7 | [jingyaogong/minimind](https://github.com/jingyaogong/minimind) | 727 | 70419 | 从零训练约 64M 参数小模型的完整 PyTorch 教程与代码 | 不建议配置：偏教学与研究复现，不能直接服务办公文档、工程审查或知识库自动化；训练需 NVIDIA GPU 与 Linux/CUDA 环境，投入产出对当前用途偏低。 | 实测环境为 Ubuntu 20.04、CUDA 12.2、RTX 3090 24GB，Windows 原生训练未确认；推理可接 ollama/llama.cpp。Apache-2.0 免费，算力自备。 | 与现有 Agent 工具无功能重叠，仅可作模型原理学习；需核对是否已有本地推理环境。 |
+| 8 | [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) | 703 | 74399 | 跨 Reddit、X、YouTube 等检索近 30 天信息并生成调研摘要的 Agent 技能 | 可观望：可把技术、人物、竞品调研自动化并沉淀进知识库，但侧重社媒舆情，与办公文档和工程审查主线关联弱；多源需自备 key，Windows 支持未确认。 | npx 安装，Claude Code 可走插件市场；桌面 MCP 需 Python 3.12+。Reddit/HN 等免费，X、TikTok、Perplexity 需自备 key 或付费；Claude Desktop 的 Windows 支持延后。 | 补充 Codex、Claude Code 的联网调研能力，与知识库自动化可能重叠，需核对已有检索配置。 |
+| 9 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 675 | 310281 | 为 Claude Code、Codex 等代理加入规划、记忆、技能与审查流程的编排系统。 | 可观望：直接支持 Codex 和 Claude Code，可能强化工程审查；但会改动代理钩子与记忆，需先在小项目验证稳定性和收益。 | Windows 原生有安装步骤；需 Node 18+、Git；Claude 插件需 Claude Code 2.1+；私有仓 Pro 收费；API 费用未确认。 | 与现有 Codex/Claude Code 配置、技能和审查流程可能重叠，需核对已有配置。 |
+| 10 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 586 | 198159 | 用代理技能约束编码代理少写代码，并提供代码审查与仓库审计命令。 | 可观望：可辅助工程审查和减少冗余代码，但偏编码场景，对文档、知识库和自动化帮助有限，基准数据需自行验证。 | Claude Code/Codex 插件安装；Codex 需信任钩子；状态栏需 Claude Code 2.1.290+；Windows 兼容与 API 费用未确认。 | 与现有编码代理规则和代码审查流程可能重叠，需核对；对办公文档和知识库补充少。 |
 
 在 Codex 里问：今天有哪些值得配置的 AI 仓库？或：评估第 3 个仓库是否适合我的电脑。由你决定哪些要配置。
 
 ## 证据与采集范围
-- [elementalsouls/Claude-BugHunter README](https://github.com/elementalsouls/Claude-BugHunter#readme)；最近推送 2026-11-24T04:26:28Z；许可证 MIT
-- [firecrawl/firecrawl README](https://github.com/firecrawl/firecrawl#readme)；最近推送 2026-11-24T03:35:41Z；许可证 AGPL-3.0
-- [zhouxiaoka/autoclip README](https://github.com/zhouxiaoka/autoclip#readme)；最近推送 2026-11-24T05:42:24Z；许可证 MIT
-- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-11-03T23:24:58Z；许可证 MIT
+- [elementalsouls/Claude-BugHunter README](https://github.com/elementalsouls/Claude-BugHunter#readme)；最近推送 2026-11-25T04:26:49Z；许可证 MIT
+- [obra/superpowers README](https://github.com/obra/superpowers#readme)；最近推送 2026-11-24T23:59:04Z；许可证 MIT
+- [firecrawl/firecrawl README](https://github.com/firecrawl/firecrawl#readme)；最近推送 2026-11-25T04:38:45Z；许可证 AGPL-3.0
+- [zhouxiaoka/autoclip README](https://github.com/zhouxiaoka/autoclip#readme)；最近推送 2026-11-25T03:16:49Z；许可证 MIT
+- [mjmirza/app-store-compliance README](https://github.com/mjmirza/app-store-compliance#readme)；最近推送 2026-11-25T04:48:48Z；许可证 NOASSERTION
+- [cathrynlavery/diagram-design README](https://github.com/cathrynlavery/diagram-design#readme)；最近推送 2026-11-25T04:53:00Z；许可证 MIT
 - [jingyaogong/minimind README](https://github.com/jingyaogong/minimind#readme)；最近推送 2026-11-23T04:01:07Z；许可证 Apache-2.0
-- [mvanhorn/last30days-skill README](https://github.com/mvanhorn/last30days-skill#readme)；最近推送 2026-11-24T05:18:40Z；许可证 MIT
-- [mjmirza/app-store-compliance README](https://github.com/mjmirza/app-store-compliance#readme)；最近推送 2026-11-23T12:02:07Z；许可证 NOASSERTION
+- [mvanhorn/last30days-skill README](https://github.com/mvanhorn/last30days-skill#readme)；最近推送 2026-11-24T19:38:02Z；许可证 MIT
 - [affaan-m/ECC README](https://github.com/affaan-m/ECC#readme)；最近推送 2026-11-23T04:55:48Z；许可证 MIT
 - [DietrichGebert/ponytail README](https://github.com/DietrichGebert/ponytail#readme)；最近推送 2026-11-22T02:31:58Z；许可证 MIT
-- [cathrynlavery/diagram-design README](https://github.com/cathrynlavery/diagram-design#readme)；最近推送 2026-11-23T11:00:38Z；许可证 MIT
 - [Trending 来源](https://github.com/trending/?since=daily)
 - [Trending 来源](https://github.com/trending/python?since=daily)
 - [Trending 来源](https://github.com/trending/typescript?since=daily)
